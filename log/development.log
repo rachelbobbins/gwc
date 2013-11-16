@@ -9841,3 +9841,898 @@ Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2013-11-15 23:24:02 -080
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-15 23:24:02 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 07:14:30 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (20.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MeetingsController#index as HTML
+  [1m[35mMeeting Load (7.5ms)[0m  SELECT "meetings".* FROM "meetings" ORDER BY "meetings"."starts_at" ASC
+  [1m[36mMeeting Load (0.4ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  Rendered meetings/index.html.haml within layouts/application (65.8ms)
+  Rendered application/_header.html.haml (0.8ms)
+Completed 200 OK in 221ms (Views: 179.9ms | ActiveRecord: 17.5ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2013-11-16 07:14:31 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 07:14:31 -0800
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:31 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:31 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:31 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:31 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:31 -0800
+
+
+Started GET "/meetings/1" for 127.0.0.1 at 2013-11-16 07:14:36 -0800
+Processing by MeetingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMeeting Load (13.0ms)[0m  [1mSELECT "meetings".* FROM "meetings" WHERE "meetings"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mMeeting Load (0.4ms)[0m  SELECT "meetings".* FROM "meetings"
+  Rendered meetings/show.html.haml within layouts/application (3.8ms)
+  Rendered application/_header.html.haml (0.9ms)
+Completed 200 OK in 32ms (Views: 16.1ms | ActiveRecord: 13.6ms)
+
+
+Started GET "/meetings/1" for 127.0.0.1 at 2013-11-16 07:14:36 -0800
+Processing by MeetingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMeeting Load (0.4ms)[0m  [1mSELECT "meetings".* FROM "meetings" WHERE "meetings"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mMeeting Load (0.5ms)[0m  SELECT "meetings".* FROM "meetings"
+  Rendered meetings/show.html.haml within layouts/application (4.8ms)
+  Rendered application/_header.html.haml (0.1ms)
+Completed 200 OK in 15ms (Views: 12.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2013-11-16 07:14:36 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 07:14:36 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:36 -0800
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:36 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:36 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:36 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:36 -0800
+
+
+Started GET "/contact" for 127.0.0.1 at 2013-11-16 07:14:41 -0800
+Processing by StaticPageController#contact as HTML
+  Rendered static/contact.html.haml within layouts/application (2.3ms)
+  Rendered application/_header.html.haml (0.1ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact" for 127.0.0.1 at 2013-11-16 07:14:41 -0800
+Processing by StaticPageController#contact as HTML
+  Rendered static/contact.html.haml within layouts/application (2.8ms)
+  Rendered application/_header.html.haml (0.1ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 07:14:41 -0800
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2013-11-16 07:14:41 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:41 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:41 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:41 -0800
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:41 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:41 -0800
+
+
+Started GET "/teacher" for 127.0.0.1 at 2013-11-16 07:14:47 -0800
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (24.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "meetings"
+  [1m[36mMeeting Load (0.6ms)[0m  [1mSELECT "meetings".* FROM "meetings" ORDER BY meetings.updated_at desc LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY posts.updated_at desc LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY users.updated_at desc LIMIT 1[0m
+  Rendered /Users/rbobbins/.rvm/gems/ruby-2.0.0-p247/gems/rails_admin-0.5.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (80.3ms)
+  Rendered /Users/rbobbins/.rvm/gems/ruby-2.0.0-p247/gems/rails_admin-0.5.0/app/views/layouts/rails_admin/_secondary_navigation.html.haml (7.4ms)
+  Rendered /Users/rbobbins/.rvm/gems/ruby-2.0.0-p247/gems/rails_admin-0.5.0/app/views/layouts/rails_admin/pjax.html.haml (4.8ms)
+Completed 200 OK in 754ms (Views: 627.9ms | ActiveRecord: 42.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:48 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:48 -0800
+
+
+Started GET "/assets/jquery.ui.core.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:48 -0800
+
+
+Started GET "/assets/rails_admin/jquery.remotipart.fixed.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:48 -0800
+
+
+Started GET "/assets/jquery.ui.effect.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:48 -0800
+
+
+Started GET "/assets/rails_admin/rails_admin.css?body=1" for 127.0.0.1 at 2013-11-16 07:14:48 -0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:48 -0800
+
+
+Started GET "/assets/jquery.ui.menu.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:48 -0800
+
+
+Started GET "/assets/jquery.ui.sortable.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:48 -0800
+
+
+Started GET "/assets/jquery.ui.widget.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:48 -0800
+
+
+Started GET "/assets/jquery.ui.mouse.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:48 -0800
+
+
+Started GET "/assets/jquery.ui.position.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:48 -0800
+
+
+Started GET "/assets/jquery.ui.autocomplete.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:48 -0800
+
+
+Started GET "/assets/rails_admin/ra.filter-box.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:48 -0800
+
+
+Started GET "/assets/jquery.ui.datepicker.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:48 -0800
+
+
+Started GET "/assets/rails_admin/jquery.ui.timepicker.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:48 -0800
+
+
+Started GET "/assets/rails_admin/jquery.colorpicker.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:48 -0800
+
+
+Started GET "/assets/rails_admin/ra.datetimepicker.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:48 -0800
+
+
+Started GET "/assets/rails_admin/ra.filtering-multiselect.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:48 -0800
+
+
+Started GET "/assets/rails_admin/ra.filtering-select.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:48 -0800
+
+
+Started GET "/assets/rails_admin/ra.remote-form.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:48 -0800
+
+
+Started GET "/assets/rails_admin/jquery.pjax.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:48 -0800
+
+
+Started GET "/assets/jquery_nested_form.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:48 -0800
+
+
+Started GET "/assets/rails_admin/ra.nested-form-hooks.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:48 -0800
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:48 -0800
+
+
+Started GET "/assets/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:49 -0800
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:49 -0800
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:49 -0800
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:49 -0800
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:49 -0800
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:49 -0800
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:49 -0800
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:49 -0800
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:49 -0800
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:49 -0800
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:49 -0800
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:49 -0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:49 -0800
+
+
+Started GET "/assets/rails_admin/ra.widgets.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:49 -0800
+
+
+Started GET "/assets/rails_admin/ui.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:49 -0800
+
+
+Started GET "/assets/rails_admin/custom/ui.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:49 -0800
+
+
+Started GET "/assets/rails_admin/rails_admin.js?body=1" for 127.0.0.1 at 2013-11-16 07:14:49 -0800
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 127.0.0.1 at 2013-11-16 07:14:49 -0800
+
+
+Started GET "/teacher/meeting?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2013-11-16 07:14:54 -0800
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"meeting"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mMeeting Load (0.5ms)[0m  [1mSELECT "meetings".* FROM "meetings" ORDER BY meetings.id desc LIMIT 20 OFFSET 0[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "meetings"
+  Rendered /Users/rbobbins/.rvm/gems/ruby-2.0.0-p247/gems/rails_admin-0.5.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (164.3ms)
+Completed 200 OK in 183ms (Views: 174.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/teacher/meeting/1/edit?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2013-11-16 07:14:56 -0800
+Processing by RailsAdmin::MainController#edit as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"meeting", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mMeeting Load (0.4ms)[0m  SELECT "meetings".* FROM "meetings" WHERE "meetings"."id" = 1 ORDER BY "meetings"."id" ASC LIMIT 1
+  Rendered /Users/rbobbins/.rvm/gems/ruby-2.0.0-p247/gems/rails_admin-0.5.0/app/views/rails_admin/main/_form_datetime.html.haml (5.7ms)
+  Rendered /Users/rbobbins/.rvm/gems/ruby-2.0.0-p247/gems/rails_admin-0.5.0/app/views/rails_admin/main/_form_datetime.html.haml (1.9ms)
+  Rendered /Users/rbobbins/.rvm/gems/ruby-2.0.0-p247/gems/rails_admin-0.5.0/app/views/rails_admin/main/_form_text.html.haml (1.4ms)
+  Rendered /Users/rbobbins/.rvm/gems/ruby-2.0.0-p247/gems/rails_admin-0.5.0/app/views/rails_admin/main/_form_text.html.haml (0.3ms)
+  Rendered /Users/rbobbins/.rvm/gems/ruby-2.0.0-p247/gems/rails_admin-0.5.0/app/views/rails_admin/main/_submit_buttons.html.haml (4.0ms)
+  Rendered /Users/rbobbins/.rvm/gems/ruby-2.0.0-p247/gems/rails_admin-0.5.0/app/views/rails_admin/main/edit.html.haml within layouts/rails_admin/pjax (39.5ms)
+Completed 200 OK in 62ms (Views: 52.5ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/teacher/meeting/1/edit" for 127.0.0.1 at 2013-11-16 07:18:41 -0800
+Processing by RailsAdmin::MainController#edit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7K2tLMe1C8dinxKFL3X9OeZxym/kbOr64BsZNIjicE4=", "meeting"=>{"starts_at"=>"2013-11-16 09:00:00 UTC", "ends_at"=>"2013-11-16 14:00:00 UTC", "description"=>"\r\nGoals\r\n=====\r\n* Students will be introduced to computer science and to real world examples.\r\n* Students will understand the idea of a program they use or see in everyday life.\r\n* Students will understand that computers only do what they are told, in the order they are told.\r\n\r\nResources\r\n=========\r\n* Introductory powerpoint [link]\r\n* Group code [link]\r\n* Worksheet [paper, include link anyway]\r\n* Challenge 1 [link to assignment]\r\n\r\nLater\r\n====\r\n* Answers to worksheet\r\n\r\n\r\n", "rendered_description"=>"<h1>Goals</h1>\r\n\r\n<pre><code>* Students will be introduced to computer science and to real world examples.\r\n* Students will understand the idea of a program they use or see in everyday life.\r\n* Students will understand that computers only do what they are told, in the order they are told.\r\n</code></pre>\r\n\r\n<h1>Resources</h1>\r\n\r\n<pre><code>* Introductory powerpoint\r\n</code></pre>\r\n"}, "return_to"=>"http://localhost:3000/teacher/meeting", "_save"=>"", "model_name"=>"meeting", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mMeeting Load (0.4ms)[0m  SELECT "meetings".* FROM "meetings" WHERE "meetings"."id" = 1 ORDER BY "meetings"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.3ms)[0m  UPDATE "meetings" SET "description" = $1, "rendered_description" = $2, "updated_at" = $3 WHERE "meetings"."id" = 1  [["description", "\r\nGoals\r\n=====\r\n* Students will be introduced to computer science and to real world examples.\r\n* Students will understand the idea of a program they use or see in everyday life.\r\n* Students will understand that computers only do what they are told, in the order they are told.\r\n\r\nResources\r\n=========\r\n* Introductory powerpoint [link]\r\n* Group code [link]\r\n* Worksheet [paper, include link anyway]\r\n* Challenge 1 [link to assignment]\r\n\r\nLater\r\n====\r\n* Answers to worksheet\r\n\r\n\r\n"], ["rendered_description", "<h1>Goals</h1>\n\n<ul>\n<li>Students will be introduced to computer science and to real world examples.</li>\n<li>Students will understand the idea of a program they use or see in everyday life.</li>\n<li>Students will understand that computers only do what they are told, in the order they are told.</li>\n</ul>\n\n\n<h1>Resources</h1>\n\n<ul>\n<li>Introductory powerpoint [link]</li>\n<li>Group code [link]</li>\n<li>Worksheet [paper, include link anyway]</li>\n<li>Challenge 1 [link to assignment]</li>\n</ul>\n\n\n<h1>Later</h1>\n\n<ul>\n<li>Answers to worksheet</li>\n</ul>\n\n"], ["updated_at", Sat, 16 Nov 2013 15:18:41 UTC +00:00]]
+  [1m[36m (12.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/teacher/meeting
+Completed 302 Found in 36ms (ActiveRecord: 16.8ms)
+
+
+Started GET "/teacher/meeting" for 127.0.0.1 at 2013-11-16 07:18:41 -0800
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"meeting"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mMeeting Load (0.7ms)[0m  [1mSELECT "meetings".* FROM "meetings" ORDER BY meetings.id desc LIMIT 20 OFFSET 0[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "meetings"
+  Rendered /Users/rbobbins/.rvm/gems/ruby-2.0.0-p247/gems/rails_admin-0.5.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/application (81.7ms)
+  Rendered /Users/rbobbins/.rvm/gems/ruby-2.0.0-p247/gems/rails_admin-0.5.0/app/views/layouts/rails_admin/_secondary_navigation.html.haml (2.2ms)
+  Rendered /Users/rbobbins/.rvm/gems/ruby-2.0.0-p247/gems/rails_admin-0.5.0/app/views/layouts/rails_admin/pjax.html.haml (4.8ms)
+Completed 200 OK in 114ms (Views: 107.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/rails_admin/rails_admin.css?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/rails_admin/jquery.remotipart.fixed.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/jquery.ui.core.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/jquery.ui.effect.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/jquery.ui.widget.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/jquery.ui.mouse.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/jquery.ui.sortable.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/jquery.ui.position.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/jquery.ui.menu.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/jquery.ui.autocomplete.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/rails_admin/jquery.ui.timepicker.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/jquery.ui.datepicker.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/rails_admin/ra.datetimepicker.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/rails_admin/ra.filter-box.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/rails_admin/jquery.colorpicker.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/rails_admin/ra.filtering-multiselect.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/rails_admin/ra.filtering-select.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/rails_admin/ra.remote-form.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/rails_admin/jquery.pjax.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/jquery_nested_form.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/rails_admin/ra.nested-form-hooks.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/rails_admin/ra.widgets.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/rails_admin/ui.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/rails_admin/custom/ui.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/assets/rails_admin/rails_admin.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:42 -0800
+
+
+Started GET "/teacher/meeting/1/show_in_app" for 127.0.0.1 at 2013-11-16 07:18:47 -0800
+Processing by RailsAdmin::MainController#show_in_app as HTML
+  Parameters: {"model_name"=>"meeting", "id"=>"1"}
+  [1m[36mUser Load (2.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mMeeting Load (1.3ms)[0m  SELECT "meetings".* FROM "meetings" WHERE "meetings"."id" = 1 ORDER BY "meetings"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/meetings/1
+Completed 302 Found in 24ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/meetings/1" for 127.0.0.1 at 2013-11-16 07:18:47 -0800
+Processing by MeetingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMeeting Load (0.5ms)[0m  [1mSELECT "meetings".* FROM "meetings" WHERE "meetings"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mMeeting Load (1.2ms)[0m  SELECT "meetings".* FROM "meetings"
+  Rendered meetings/show.html.haml within layouts/application (4.8ms)
+  Rendered application/_header.html.haml (0.1ms)
+Completed 200 OK in 20ms (Views: 16.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:47 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 07:18:47 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:47 -0800
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2013-11-16 07:18:47 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:47 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:47 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:47 -0800
+
+
+Started GET "/meetings/1" for 127.0.0.1 at 2013-11-16 07:18:50 -0800
+Processing by MeetingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMeeting Load (0.6ms)[0m  [1mSELECT "meetings".* FROM "meetings" WHERE "meetings"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mMeeting Load (0.6ms)[0m  SELECT "meetings".* FROM "meetings"
+  Rendered meetings/show.html.haml within layouts/application (3.8ms)
+  Rendered application/_header.html.haml (0.1ms)
+Completed 200 OK in 21ms (Views: 17.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 07:18:50 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:50 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:50 -0800
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2013-11-16 07:18:50 -0800
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:50 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:50 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:50 -0800
+
+
+Started GET "/meetings/1" for 127.0.0.1 at 2013-11-16 07:18:53 -0800
+Processing by MeetingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMeeting Load (0.4ms)[0m  [1mSELECT "meetings".* FROM "meetings" WHERE "meetings"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mMeeting Load (0.3ms)[0m  SELECT "meetings".* FROM "meetings"
+  Rendered meetings/show.html.haml within layouts/application (2.1ms)
+  Rendered application/_header.html.haml (0.1ms)
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 07:18:53 -0800
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:53 -0800
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2013-11-16 07:18:53 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:53 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:53 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:53 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 07:18:53 -0800
+
+
+Started GET "/conduct" for 127.0.0.1 at 2013-11-16 11:25:12 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (9.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPageController#conduct as HTML
+  Rendered static/conduct.html.haml within layouts/application (2.5ms)
+  Rendered application/_header.html.haml (0.9ms)
+Completed 200 OK in 90ms (Views: 72.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2013-11-16 11:25:12 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 11:25:12 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 11:25:12 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 11:25:12 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 11:25:13 -0800
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-11-16 11:25:13 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 11:25:13 -0800
+
+
+Started GET "/conduct" for 127.0.0.1 at 2013-11-16 11:25:42 -0800
+Processing by StaticPageController#conduct as HTML
+  Rendered static/conduct.html.haml within layouts/application (1.3ms)
+  Rendered application/_header.html.haml (0.1ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 11:25:42 -0800
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2013-11-16 11:25:42 -0800
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-11-16 11:25:42 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 11:25:42 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 11:25:42 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 11:25:42 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 11:25:42 -0800
+
+
+Started GET "/conduct" for 127.0.0.1 at 2013-11-16 11:26:09 -0800
+Processing by StaticPageController#conduct as HTML
+  Rendered static/conduct.html.haml within layouts/application (0.2ms)
+  Rendered application/_header.html.haml (0.1ms)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 11:26:09 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 11:26:09 -0800
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2013-11-16 11:26:09 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 11:26:09 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 11:26:09 -0800
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-11-16 11:26:09 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 11:26:09 -0800
+
+
+Started GET "/conduct" for 127.0.0.1 at 2013-11-16 11:26:10 -0800
+Processing by StaticPageController#conduct as HTML
+  Rendered static/conduct.html.haml within layouts/application (1.5ms)
+  Rendered application/_header.html.haml (0.8ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/conduct" for 127.0.0.1 at 2013-11-16 11:26:10 -0800
+Processing by StaticPageController#conduct as HTML
+  Rendered static/conduct.html.haml within layouts/application (0.1ms)
+  Rendered application/_header.html.haml (0.1ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2013-11-16 11:26:10 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 11:26:10 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 11:26:10 -0800
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-11-16 11:26:10 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 11:26:10 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 11:26:10 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 11:26:10 -0800
+
+
+Started GET "/meetings" for 127.0.0.1 at 2013-11-16 11:26:11 -0800
+Processing by MeetingsController#index as HTML
+  [1m[35mMeeting Load (7.4ms)[0m  SELECT "meetings".* FROM "meetings" ORDER BY "meetings"."starts_at" ASC
+  [1m[36mMeeting Load (0.4ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  Rendered meetings/index.html.haml within layouts/application (58.6ms)
+  Rendered application/_header.html.haml (0.1ms)
+Completed 200 OK in 89ms (Views: 60.5ms | ActiveRecord: 23.9ms)
+
+
+Started GET "/meetings" for 127.0.0.1 at 2013-11-16 11:26:11 -0800
+Processing by MeetingsController#index as HTML
+  [1m[36mMeeting Load (0.5ms)[0m  [1mSELECT "meetings".* FROM "meetings" ORDER BY "meetings"."starts_at" ASC[0m
+  [1m[35mMeeting Load (0.3ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  Rendered meetings/index.html.haml within layouts/application (45.1ms)
+  Rendered application/_header.html.haml (0.1ms)
+Completed 200 OK in 54ms (Views: 51.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 11:26:11 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 11:26:11 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 11:26:11 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 11:26:11 -0800
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-11-16 11:26:11 -0800
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2013-11-16 11:26:11 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 11:26:11 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 11:26:11 -0800
+Processing by MeetingsController#index as HTML
+  [1m[35mMeeting Load (0.6ms)[0m  SELECT "meetings".* FROM "meetings" ORDER BY "meetings"."starts_at" ASC
+  [1m[36mMeeting Load (0.3ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  Rendered meetings/index.html.haml within layouts/application (39.5ms)
+  Rendered application/_header.html.haml (0.1ms)
+Completed 200 OK in 48ms (Views: 46.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-16 11:26:12 -0800
+Processing by MeetingsController#index as HTML
+  [1m[36mMeeting Load (0.4ms)[0m  [1mSELECT "meetings".* FROM "meetings" ORDER BY "meetings"."starts_at" ASC[0m
+  [1m[35mMeeting Load (0.3ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "meetings".* FROM "meetings"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "meetings".* FROM "meetings"[0m
+  Rendered meetings/index.html.haml within layouts/application (73.6ms)
+  Rendered application/_header.html.haml (0.1ms)
+Completed 200 OK in 82ms (Views: 79.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2013-11-16 11:26:12 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 11:26:12 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 11:26:12 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 11:26:12 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 11:26:12 -0800
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-11-16 11:26:12 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 11:26:12 -0800
+
+
+Started GET "/contact" for 127.0.0.1 at 2013-11-16 11:26:13 -0800
+Processing by StaticPageController#contact as HTML
+  Rendered static/contact.html.haml within layouts/application (2.2ms)
+  Rendered application/_header.html.haml (0.1ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact" for 127.0.0.1 at 2013-11-16 11:26:13 -0800
+Processing by StaticPageController#contact as HTML
+  Rendered static/contact.html.haml within layouts/application (2.6ms)
+  Rendered application/_header.html.haml (0.1ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-16 11:26:13 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-16 11:26:13 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-16 11:26:13 -0800
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2013-11-16 11:26:13 -0800
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-11-16 11:26:13 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-16 11:26:13 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-16 11:26:13 -0800

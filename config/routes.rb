@@ -8,5 +8,6 @@ Gwc::Application.routes.draw do
   resources :meetings
 
   get 'contact' => 'static_page#contact'
+  get 'conduct' => 'static_page#conduct'
 
 end

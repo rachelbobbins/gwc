@@ -3,7 +3,7 @@ class StaticPageController < ApplicationController
 		render "static/contact"
 	end
 
-	def schedule
-		render "static/schedule"
+	def  conduct
+		render "static/conduct"
 	end
 end
