@@ -1,10 +1,13 @@
-- @meetings.each_with_index do |m, index|
-	.row.meeting{id: "class#{index}"}
+- @meetings.each do |m|
+	.row.meeting{id: "class#{m.ordinal}"}
 		.col-md-2
-			= "Class #{index}"
+			= "Class #{m.ordinal}"
 		.col-md-3
 			= m.starts_at.strftime("%a, %b %d ")
 		.col-md-3
 			= m.starts_at.strftime("%l%P")
 			= "-"
 			= m.ends_at.strftime("%l%P")
+		.col-md-3
+			- if m.starts_at < DateTime.new(2013,11,20)
+				= link_to("Details", meeting_path(m))

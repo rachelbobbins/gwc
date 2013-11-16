@@ -9,6 +9,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'haml'
 gem 'simple_form'
+gem 'rails_admin'
+gem 'markdownizer'
 
 group :doc do
   gem 'sdoc', require: false
@@ -34,3 +36,6 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+
+gem "devise"

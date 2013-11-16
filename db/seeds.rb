@@ -17,6 +17,18 @@ def create_meeting(month, date, year, start_hour = nil, end_hour = nil )
 end
 
 create_meeting(11, 16, 2013, 9, 14)
+Meeting.all.first.update_attributes(description: """
+Goals
+=====
+	* Students will be introduced to computer science and to real world examples.
+	* Students will understand the idea of a program they use or see in everyday life.
+	* Students will understand that computers only do what they are told, in the order they are told.
+
+Resources
+=========
+	* Introductory powerpoint
+""")
+
 create_meeting(11, 22, 2013, 19, 22)
 create_meeting(12, 7,  2013)
 create_meeting(12, 14,  2013)
@@ -31,3 +43,4 @@ create_meeting(4, 26,  2014)
 create_meeting(5, 3,  2014)
 create_meeting(5, 17,  2014)
 
+User.create(email: 'rachelheidi@gmail.com', password: 'password1')

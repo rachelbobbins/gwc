@@ -1,0 +1,11 @@
+%h2
+	Class 
+	= @meeting.ordinal
+	= ", "
+	= @meeting.starts_at.strftime("%B %d")
+
+- if @meeting.rendered_description
+	= @meeting.rendered_description.html_safe
+- else
+	%h3 No details posted yet... sorry! 
+	%img{src: "http://rack.1.mshcdn.com/media/ZgkyMDEzLzA3LzE4LzBkL0hpbGxhcnlEdWZmLmIxYjg3LmdpZgpwCXRodW1iCTEyMDB4OTYwMD4/541e29fc/b58/Hillary-Duff.gif"}

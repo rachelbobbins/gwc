@@ -1,6 +1,8 @@
 Gwc::Application.routes.draw do
+  devise_for :users
+  mount RailsAdmin::Engine => '/teacher', :as => 'rails_admin'
   
-  root 'posts#index'
+  root 'meetings#index'
 
   resources :posts
   resources :meetings
