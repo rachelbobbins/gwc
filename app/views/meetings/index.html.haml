@@ -1,0 +1,10 @@
+- @meetings.each_with_index do |m, index|
+	.row.meeting{id: "class#{index}"}
+		.col-md-2
+			= "Class #{index}"
+		.col-md-3
+			= m.starts_at.strftime("%a, %b %d ")
+		.col-md-3
+			= m.starts_at.strftime("%l%P")
+			= "-"
+			= m.ends_at.strftime("%l%P")
