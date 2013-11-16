@@ -1,3 +1,5 @@
+= link_to "New Post", new_post_path
 - @posts.each do |p|
 	%h2= p.title	
+	%h3= p.created_at
 	%p= p.text

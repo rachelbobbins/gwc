@@ -8,9 +8,18 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'haml'
+gem 'simple_form'
 
 group :doc do
   gem 'sdoc', require: false
+end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+end
+
+group :test do
+	gem 'capybara'
 end
 
 # Use ActiveModel has_secure_password

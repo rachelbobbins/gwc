@@ -4,16 +4,23 @@
 	<head>
 	  <title>Gwc</title>
 	  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	  <%= stylesheet_link_tag    "application", href: "//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"%>
 	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	  <%= csrf_meta_tags %>
+
 	</head>
 	<body>
 
-=render partial: "header"
-
-= yield
+.container#header
+	=render partial: "header"
+.container
+	.col-md-3#nav-menu
+		%ul.nav.nav-pills.nav-stacked
+			%li= link_to("Home", root_path)
+			%li= link_to("Contact Us", contact_path)
+	.col-md-9#main
+		= yield
 
 :erb
-
 	</body>
 	</html>

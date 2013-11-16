@@ -6,6 +6,8 @@ Gwc::Application.routes.draw do
   resources :posts
   root 'posts#index'
 
+  get 'contact' => 'static_page#contact'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
