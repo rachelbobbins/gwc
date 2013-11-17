@@ -1,5 +1,11 @@
-%h2 
-	Our latest meeting was
+%h2
+	Welcome! This is the homepage for the Girls Who Code club at Leadership Public School. Here you'll find all the resources you need to succeed in this club, including project descriptions, helpful links, and links to everything we've done in class.
+
+%h4 
+	Our 
+	%a{href: meeting_path(@meeting)}latest meeting
+	was
 	= @meeting.starts_at.strftime("%B %y")
 
-= @meeting.rendered_description.html_safe
+
+/ = @meeting.rendered_description.html_safe
