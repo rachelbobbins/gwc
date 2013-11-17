@@ -6,4 +6,9 @@ class StaticPageController < ApplicationController
 	def  conduct
 		render "static/conduct"
 	end
+
+	def home
+		@meeting = Meeting.latest
+		render "static/home"
+	end
 end
