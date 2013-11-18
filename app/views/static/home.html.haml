@@ -6,6 +6,3 @@
 	%a{href: meeting_path(@meeting)}latest meeting
 	was
 	= @meeting.starts_at.strftime("%b %d")
-
-
-/ = @meeting.rendered_description.html_safe

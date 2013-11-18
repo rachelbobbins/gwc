@@ -1,4 +1,8 @@
 class Meeting < ActiveRecord::Base
+	belongs_to :project
+
+	validates_presence_of :starts_at, :ends_at, :description
+	
 	markdownize! :description
 
 	scope :by_date, -> { order(:starts_at)}

@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131116071102) do
+ActiveRecord::Schema.define(version: 20131117035954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "links", force: true do |t|
+    t.string   "url"
+    t.string   "name"
+    t.text     "long_description"
+    t.boolean  "is_private",       default: false
+    t.integer  "owner_id"
+    t.string   "owner_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "meetings", force: true do |t|
     t.datetime "starts_at"
@@ -23,13 +34,14 @@ ActiveRecord::Schema.define(version: 20131116071102) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "rendered_description"
+    t.integer  "project_id"
   end
 
-  create_table "posts", force: true do |t|
-    t.string   "title"
-    t.text     "text"
+  create_table "projects", force: true do |t|
+    t.string   "assignment_link"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "rails_admin_histories", force: true do |t|

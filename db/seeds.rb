@@ -13,7 +13,7 @@ def create_meeting(month, date, year, start_hour = nil, end_hour = nil )
 	starts_at = DateTime.new(year, month, date, start_hour, 0, 0)
 	ends_at = DateTime.new(year, month, date, end_hour, 0, 0)
 
-	Meeting.create(starts_at: starts_at, ends_at: ends_at)
+	Meeting.create(starts_at: starts_at, ends_at: ends_at, description: "Foo")
 end
 
 create_meeting(11, 16, 2013, 9, 14)
