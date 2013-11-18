@@ -30,6 +30,7 @@ describe "Admin(teacher) interface" do
 		end
 
 		it "can associate a project(s) with a meeting", :js => true do
+			pending
 			within ".table" do
 				click_link "Meetings"
 			end
