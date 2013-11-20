@@ -30,10 +30,12 @@ describe "Admin(teacher) interface" do
 		end
 
 		it "can associate a project(s) with a meeting", :js => true do
-			pending
+			pending "TODO: why can't rspec find save action?"
 			within ".table" do
 				click_link "Meetings"
 			end
+
+			sleep(2)
 
 			page.all("tr .edit_member_link a").first.click
 
@@ -44,11 +46,27 @@ describe "Admin(teacher) interface" do
 			within "#modal" do
 				fill_in "Assignment link", with: "www.google.com"
 				fill_in "Name", with: "Google"
-				click_link ".save-action"
+				page.find("a.save-action").click
 			end
 
 			within "#meeting_project_id" do
 				page should have_content "Fake name"
+			end
+		end
+
+		describe "managing meetings" do
+			it "can create meetings" do
+				within ".table" do
+					click_link "Meetings"
+				end
+
+				click_link "Add new"
+				fill_in "Starts at", with: "November 1, 2013"
+				fill_in "Ends at", with: "November 1, 2013"
+				fill_in "Description", with: "Hello, class"
+				click_button "Save"
+				
+				page.should have_content "Meeting successfully created"
 			end
 		end
 	end
