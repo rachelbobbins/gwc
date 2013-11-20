@@ -17,8 +17,7 @@ def create_meeting(month, date, year, start_hour = nil, end_hour = nil )
 end
 
 meeting = create_meeting(11, 16, 2013, 9, 14)
-meeting.update_attributes(is_public: true)
-Meeting.all.first.update_attributes(description: """
+meeting.update_attributes(is_private: false, description: """
 Goals
 =====
 	* Students will be introduced to computer science and to real world examples.

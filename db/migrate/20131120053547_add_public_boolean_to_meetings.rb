@@ -1,5 +1,5 @@
 class AddPublicBooleanToMeetings < ActiveRecord::Migration
   def change
-  	add_column :meetings, :is_public, :boolean, default: false
+  	add_column :meetings, :is_private, :boolean, default: true
   end
 end

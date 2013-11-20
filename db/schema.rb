@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20131120053547) do
     t.datetime "updated_at"
     t.text     "rendered_description"
     t.integer  "project_id"
-    t.boolean  "is_public",            default: false
+    t.boolean  "is_private",           default: true
   end
 
   create_table "projects", force: true do |t|

@@ -9,5 +9,5 @@
 			= "-"
 			= m.ends_at.strftime("%l%P")
 		.col-md-3
-			- if m.is_public
+			- unless m.is_private
 				= link_to("Details", meeting_path(m))
