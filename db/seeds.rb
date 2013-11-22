@@ -28,6 +28,3 @@ Resources
 """)
 
 create_meeting(11, 22, 2013, 19, 22)
-
-
-User.create(email: 'rachelheidi@gmail.com', password: 'password1')

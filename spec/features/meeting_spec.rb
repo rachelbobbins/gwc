@@ -1,9 +1,10 @@
 require 'spec_helper'
 
 describe "finding out information about classes" do
-	before :each do
-		visit "/"
+	before do
+		login_as_admin
 
+		visit "/"
 		within "#nav-menu" do
 			click_link "Schedule"
 		end
@@ -43,7 +44,7 @@ describe "finding out information about classes" do
 			page.should have_content project.name
 			page.should have_content project.description
 			
-			project.links.each { |project| page.should have_content project.name }
+			project.links.each { |link| page.should have_content link.name }
 		end
 		
 		it "shows the meeting's links"

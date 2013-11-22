@@ -11,7 +11,7 @@ gem 'haml'
 gem 'simple_form'
 gem 'rails_admin'
 gem 'markdownizer'
-
+gem 'cancan'
 group :doc do
   gem 'sdoc', require: false
 end

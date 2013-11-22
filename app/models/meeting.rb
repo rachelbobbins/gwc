@@ -17,8 +17,8 @@ class Meeting < ActiveRecord::Base
 
 	rails_admin do
 		list do
+			field :project
 			field :starts_at
-			field :ends_at
 		end
 
 		edit do
