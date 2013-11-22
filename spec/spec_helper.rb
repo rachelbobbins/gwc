@@ -20,7 +20,10 @@ RSpec.configure do |config|
   config.before(:suite) do
     load "#{Rails.root}/db/seeds.rb"
     User.create!(email: 'rachelheidi@gmail.com', password: 'password1', role: 'teacher')
+    User.create!(email: 'student@example.com', password: 'password1')
   end
+
+
   # ## Mock Framework
   #
   # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
