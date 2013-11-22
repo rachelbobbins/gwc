@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 	validates :role, :inclusion => {:in => ['teacher', 'student']}
+	validates_presence_of :first_name, :last_name
 
 	def admin?
 		role == 'teacher'
@@ -12,5 +13,15 @@ class User < ActiveRecord::Base
 
 	def student?
 		role == 'student'
+	end
+
+	rails_admin do
+		list do
+			field :role
+			field :email
+			field :first_name
+			field :last_name
+			field :grade
+		end
 	end
 end
