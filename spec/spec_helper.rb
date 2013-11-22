@@ -18,7 +18,7 @@ ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
 RSpec.configure do |config|
   config.before(:suite) do
-    load "#{Rails.root}/db/seeds.rb"
+    # load "#{Rails.root}/db/seeds.rb"
     User.create!(email: 'rachelheidi@gmail.com', password: 'password1', role: 'teacher')
     User.create!(email: 'student@example.com', password: 'password1')
   end

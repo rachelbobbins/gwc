@@ -21,4 +21,8 @@ describe "static pages" do
 
 		page.should have_content "Code of Conduct"
 	end
+
+	it "has a homepage" do
+		page.should have_content "This is the homepage"
+	end
 end

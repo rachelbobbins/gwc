@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe "finding out information about classes" do
+	let!(:meeting1) { FactoryGirl.create :meeting, starts_at: DateTime.new(2013, 11, 16, 9) }
+	let!(:meeting2) { FactoryGirl.create :meeting, starts_at: DateTime.new(2013, 11, 23, 9), is_private: true}
+
 	before do
 		login_as_admin
 
@@ -10,25 +13,27 @@ describe "finding out information about classes" do
 		end
 	end
 
-	it "has a class schedule" do
-		page.all(".meeting").count.should equal(2)
+	describe "Meeting schedule" do
+		it "shows date/time for each meeting" do
+			page.all(".meeting").count.should equal(2)
 
-		within "#class0" do
-			page.should have_content "Class 0"
-			page.should have_content "Sat, Nov 16"
-			page.should have_content "9am - 2pm"
+			within "#class0" do
+				page.should have_content "Class 0"
+				page.should have_content "Sat, Nov 16"
+				page.should have_content "9am - 12pm"
+			end
 		end
-	end
 
-	it "shows details link for public classes" do
-		within "#class0" do
-			page.should have_content "Details"
+		it "shows details link for public classes" do
+			within "#class0" do
+				page.should have_content "Details"
+			end
 		end
-	end
 
-	it "hides details link for private classes" do
-		within "#class1" do
-			page.should_not have_content "Details"
+		it "hides details link for private classes" do
+			within "#class1" do
+				page.should_not have_content "Details"
+			end
 		end
 	end
 
