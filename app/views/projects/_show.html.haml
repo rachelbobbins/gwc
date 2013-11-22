@@ -1,5 +1,7 @@
 %h2
 	= project.name
+	| 
+	= link_to("Details", project.assignment_link, path_only: false)
 = project.rendered_description
 = render partial: "links/index_for_owner", locals: {owner: project}
 	
