@@ -31,4 +31,25 @@ describe "finding out information about classes" do
 		end
 	end
 
+	describe "details page for a meeting with an associated project" do
+		let(:meeting) { FactoryGirl.create :meeting, :with_project }
+		let(:project) { meeting.project }
+		
+		before do
+			visit "/meetings/#{meeting.id}"
+		end
+
+		it "shows the project, and the project's links" do
+			page.should have_content project.name
+			
+			project.links.each { |project| page.should have_content project.name }
+		end
+		
+		it "shows the meeting's links"
+		it "shows the meeting's description" do
+			page.should have_content meeting.description
+		end
+
+	end
+
 end

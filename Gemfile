@@ -25,6 +25,10 @@ group :test do
 	gem 'launchy'
 	gem 'shoulda-matchers'
 	gem 'selenium-webdriver'
+	gem 'factory_girl_rails'
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
 end
 
 group :production do
