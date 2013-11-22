@@ -27,7 +27,16 @@ describe "Authentication and permissions" do
 		it "cannot view private classes" do
 			visit "/meetings/#{private_meeting.id}"
 
-			page.should have_content "Sign in"
+			within "#main" do
+				page.should have_content "Sign in"
+			end
+		end
+
+		it "sees a login link" do
+			visit "/"
+			within "#header" do
+			  page.should have_content "Log In"
+			end
 		end
 	end
 
@@ -50,6 +59,12 @@ describe "Authentication and permissions" do
 			visit "/meetings/#{private_meeting.id}"
 
 			page.should have_content "This is the homepage"
+		end
+
+		it "sees a sign out link" do
+			within "#header" do
+				page.should have_content "Log out"
+			end
 		end
 	end
 		
