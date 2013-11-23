@@ -2,6 +2,7 @@
 	= project.name
 	| 
 	= link_to("Details", project.assignment_link, path_only: false)
-= project.rendered_description.html_safe
+- if project.rendered_description
+	= project.rendered_description.html_safe
 = render partial: "links/index_for_owner", locals: {owner: project}
 	
