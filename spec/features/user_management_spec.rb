@@ -21,7 +21,7 @@ describe "Authentication and permissions" do
 			visit "/meetings/#{meeting.id}"
 
 			page.should have_content public_link.name
-			page.should_not have_content private_link.name
+			page.find_link(private_link.name)[:href].should == "#"
 		end
 		
 		it "cannot view private classes" do
@@ -29,6 +29,14 @@ describe "Authentication and permissions" do
 
 			within "#main" do
 				page.should have_content "Sign in"
+			end
+		end
+
+		it "cannot view the Details link for a project" do
+			visit "/meetings/#{meeting.id}"
+
+			within ".project-section h2" do
+				page.all("a.disabled").count.should equal(1)
 			end
 		end
 

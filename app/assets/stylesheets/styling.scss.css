@@ -3,6 +3,10 @@
 	text-align: right;
 }
 
+a.disabled {
+	color: #929292;
+}
+
 ul.nav-pills.nav-stacked li.nested a{
 	padding: 3px 40px;
 }
