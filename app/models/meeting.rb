@@ -6,9 +6,14 @@ class Meeting < ActiveRecord::Base
 	markdownize! :description
 
 	scope :by_date, -> { order(:starts_at)}
-	
+
+
 	def self.latest
 		Meeting.by_date.where('starts_at < ?', DateTime.now).last
+	end
+
+	def self.up_to_now
+		Meeting.by_date.where('starts_at < ?', DateTime.now + 6.hours)
 	end
 
 	def ordinal
