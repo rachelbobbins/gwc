@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe User do
+	let(:user) { FactoryGirl.create :user, first_name: "Jane", last_name: "Smith"}
+
 	describe "validations" do
 		it { should ensure_inclusion_of(:role).in_array(['teacher', 'student']) }
 		it { should validate_presence_of(:first_name) }
@@ -10,7 +12,6 @@ describe User do
 	describe "#completed_projects" do
 		let(:project1) { FactoryGirl.create :completed_project }
 		let(:project2) { FactoryGirl.create :completed_project }
-		let(:user) { FactoryGirl.create :user, role: 'student'}
 
 		before do
 			user.update_attributes(completed_projects: [project1, project2])
@@ -23,8 +24,12 @@ describe User do
 	end
 
 	describe "#initials" do
-		let(:user) { FactoryGirl.create :user, first_name: "Jane", last_name: "Smith"}
 		subject { user.initials }
 		it { should == "JS" }
+	end
+
+	describe "#name" do
+		subject { user.name }
+		it { should == "Jane Smith"}
 	end
 end

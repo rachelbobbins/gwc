@@ -17,11 +17,18 @@ class User < ActiveRecord::Base
 		role == 'student'
 	end
 
+	def name
+		first_name + " " + last_name
+	end
+
 	def initials
 		first_name[0] + last_name[0]
 	end
 
 	rails_admin do
+		object_label_method do
+			:name
+		end
 		list do
 			field :role
 			field :email
