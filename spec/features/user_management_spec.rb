@@ -78,8 +78,20 @@ describe "Authentication and permissions" do
 		
 
 	context "a logged-in teacher" do
-		it "can access the teacher portal"
-		it "can view private links"
-		it "can view private classes"
+		before { login_as_admin }
+		it "can access the teacher portal" do
+			visit "/teacher"
+			page.should have_content "Site administration"
+		end
+		
+		it "can view private links" do
+			visit meeting_path(meeting)
+			page.find_link(private_link.name)[:href].should == private_link.url
+		end
+		
+		it "can view private classes" do
+			visit meeting_path(private_meeting)
+			page.should have_content(private_meeting.description)
+		end
 	end
 end

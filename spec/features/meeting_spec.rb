@@ -45,7 +45,9 @@ describe "finding out information about classes" do
 			visit "/meetings/#{meeting.id}"
 		end
 
-		it "always includes the assignment link"
+		it "always includes the assignment link" do
+			page.should have_content "| Details"
+		end
 
 		it "shows the project, and the project's description/links" do
 			page.should have_content project.name
@@ -55,7 +57,6 @@ describe "finding out information about classes" do
 			project.links.each { |link| page.should have_content link.name }
 		end
 		
-		it "shows the meeting's links"
 		it "shows the meeting's description" do
 			page.should have_content meeting.description
 		end
