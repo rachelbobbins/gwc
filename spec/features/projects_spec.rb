@@ -22,7 +22,6 @@ describe "Projects" do
 		it "embeds Khan Academy's rendering for each project" do
 			page.should have_content "Completed Project by #{user1.initials}, #{user2.initials}"
 		end
-		
 	end
 
 end

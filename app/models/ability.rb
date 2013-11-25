@@ -12,7 +12,6 @@ class Ability
           can :read, Meeting, is_private: false 
         end
       else
-        # puts "*******no signed in user"
         can :read, Meeting, is_private: false
         can :read, Link, is_private: false
       end

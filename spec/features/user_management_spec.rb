@@ -94,4 +94,29 @@ describe "Authentication and permissions" do
 			page.should have_content(private_meeting.description)
 		end
 	end
+
+	describe "managing an account" do
+		let!(:user) { FactoryGirl.create :user, first_name: "Jane", last_name: "Smith" }
+
+		before do
+		 login_as user
+		 	within "#header" do
+				page.find_link("My Account").click
+			end
+		end
+
+		it "can view her profile" do
+			page.should have_content "Jane Smith"
+			page.should have_content user.email
+		end
+
+		it "can change her password" do
+			page.find_link("Change Password").click
+			fill_in "Password", with: 'new.password'
+			fill_in "Password confirmation", with: 'new.password'
+			fill_in "Current password", with: 'password'
+			page.find_button("Update").click
+			page.should have_content("Jane Smith's Account")
+		end
+	end
 end
