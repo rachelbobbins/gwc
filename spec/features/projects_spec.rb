@@ -19,9 +19,8 @@ describe "Projects" do
 			visit "/projects/#{project.id}"
 		end
 		
-		it "has a link for each completed project" do
-			page.should have_content "#{completed_project.url}"
-			page.should have_content "Submission by #{user1.initials}, #{user2.initials}"
+		it "embeds Khan Academy's rendering for each project" do
+			page.should have_content "Completed Project by #{user1.initials}, #{user2.initials}"
 		end
 		
 	end
