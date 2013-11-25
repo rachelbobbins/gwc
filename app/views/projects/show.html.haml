@@ -1,10 +1,14 @@
 = render partial: "show", locals: {project: @project}
 
 %h2 Gallery of completed work
+%p 
+	(All Made using: 
+	= link_to("Khan Academy Computer Science", "http://www.khanacademy.org/cs")
+	) 
 - @completed_projects.each do |cp|
 	:erb
 		<h3>
 			<a href="<%= cp.url%>"><%= "Completed Project by #{cp.users.map(&:initials).join(', ')}" %></a>
 		</h3> 
 		<script src='<%= "#{cp.url}/embed.js?editor=yes&amp;buttons=yes&amp;author=no&amp;embed=yes" %>' >
-		</script> <p>Made using: <a href="http://www.khanacademy.org/cs">Khan Academy Computer Science</a>.</p> 
+		</script> 
