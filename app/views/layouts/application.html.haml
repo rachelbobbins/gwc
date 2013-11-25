@@ -20,6 +20,9 @@
 			%li= link_to("Schedule", meetings_path)
 			- Meeting.up_to_now.each do |m|
 				%li.nested= link_to("Class ##{m.ordinal}", meeting_path(m))
+			%li= link_to("Projects", "#", :class => "disabled")
+			- Project.all.each do |p|
+				%li.nested= link_to("#{p.name}", project_path(p))
 			%li= link_to("Code of Conduct", conduct_path)
 			%li= link_to("Contact Us", contact_path)
 

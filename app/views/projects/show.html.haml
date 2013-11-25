@@ -1,0 +1,6 @@
+= render partial: "show", locals: {project: @project}
+
+%h2 Gallery of completed work
+- @completed_projects.each do |cp|
+	%h4= "Submission by #{cp.users.map(&:initials).join(', ')}"
+	= link_to(cp.url, cp.url)

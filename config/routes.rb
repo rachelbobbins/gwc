@@ -6,7 +6,8 @@ Gwc::Application.routes.draw do
   root 'static_page#home'
 
   resources :meetings
-  
+  resources :projects, only: [:show]
+    
   get 'contact' => 'static_page#contact'
   get 'conduct' => 'static_page#conduct'
   get 'home'		=> 'static_page#home'

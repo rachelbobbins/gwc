@@ -8,4 +8,9 @@ FactoryGirl.define do
 			FactoryGirl.create :link, owner: project
 		end
 	end
+
+	factory :completed_project do
+		project { FactoryGirl.create :project }
+		url "www.finished-project.com"
+	end
 end
