@@ -97,6 +97,7 @@ describe "Authentication and permissions" do
 
 	describe "managing an account" do
 		let!(:user) { FactoryGirl.create :user, first_name: "Jane", last_name: "Smith" }
+		let!(:completed_project) { FactoryGirl.create :completed_project, users: [user] }
 
 		before do
 		 login_as user
@@ -117,6 +118,11 @@ describe "Authentication and permissions" do
 			fill_in "Current password", with: 'password'
 			page.find_button("Update").click
 			page.should have_content("Jane Smith's Account")
+		end
+
+		it "shows a list of her projects" do
+			page.should have_content "My Completed Projects"
+			page.should have_content completed_project.project.name
 		end
 	end
 end

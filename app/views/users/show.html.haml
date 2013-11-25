@@ -19,3 +19,22 @@
 	%tr
 		%td Grade
 		%td= @user.grade || "unknown"
+
+%h3 My Completed Projects
+- if @user.completed_projects.length > 0
+	- @user.completed_projects.each do |cp|
+		%table
+			%tr
+				%td= cp.project.name
+			%tr
+				%td
+					Group included:
+					- if cp.users.count > 1
+						= cp.users.map(&:name).join(', ')
+					- else
+						just me!
+			%tr
+				%td
+					= link_to(cp.url, cp.url)
+- else
+	%p Oh no! Looks like you haven't done anything yet
