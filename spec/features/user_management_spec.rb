@@ -124,5 +124,17 @@ describe "Authentication and permissions" do
 			page.should have_content "My Completed Projects"
 			page.should have_content completed_project.project.name
 		end
+
+		it "can edit her name/grade" do
+			page.find_link("Edit").click
+
+			fill_in "Grade", with: '10'
+			fill_in "First name", with: "Jolly"
+			fill_in "Last name", with: "Roger"
+
+			page.find_button("Update My Account").click
+			page.should have_content "Successfully updated"
+			page.should have_content "Jolly Roger's Account"
+		end 
 	end
 end

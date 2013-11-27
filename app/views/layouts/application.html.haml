@@ -4,7 +4,6 @@
 	<head>
 	  <title>Gwc</title>
 	  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-	  <%= stylesheet_link_tag    "application", href: "//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"%>
 	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	  <%= csrf_meta_tags %>
 
@@ -28,6 +27,9 @@
 
 
 	.col-md-9#main
+		.row
+		- if flash[:notice]
+			.alert.alert-info= flash[:notice]
 		= yield
 
 :erb

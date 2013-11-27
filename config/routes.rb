@@ -7,8 +7,8 @@ Gwc::Application.routes.draw do
 
   resources :meetings
   resources :projects, only: [:show]
-  resources :users, only: [:show]
-  
+  resources :users, only: [:show, :edit, :update]
+
 	get 'user_root' => 'users#show'
 
   get 'contact' => 'static_page#contact'
