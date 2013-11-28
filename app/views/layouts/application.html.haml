@@ -13,17 +13,22 @@
 .container#header
 	=render partial: "header"
 .container
-	.col-md-3#nav-menu
-		%ul.nav.nav-pills.nav-stacked
-			%li= link_to("Home", root_path)
-			%li= link_to("Schedule", meetings_path)
-			- Meeting.up_to_now.each do |m|
-				%li.nested= link_to("Class ##{m.ordinal}", meeting_path(m))
-			%li= link_to("Projects", "#", :class => "disabled")
-			- Project.all.each do |p|
-				%li.nested= link_to("#{p.name}", project_path(p))
-			%li= link_to("Code of Conduct", conduct_path)
-			%li= link_to("Contact Us", contact_path)
+	.navbar.navbar-default#nav-menu
+		.navbar-collapse.collapse
+			%ul.nav.navbar-nav
+				%li= link_to("Home", root_path)
+				%li.dropdown
+					%a{href: meetings_path, class: "dropdown-toggle", "data-toggle" => "dropdown"} Schedule
+					%ul.dropdown-menu
+						- Meeting.up_to_now.each do |m|
+							%li= link_to("Class ##{m.ordinal}", meeting_path(m))
+				%li.dropdown
+					%a{href: "#", class: "dropdown-toggle", "data-toggle" => "dropdown"} Projects
+					%ul.dropdown-menu
+						- Project.all.each do |p|
+							%li= link_to("#{p.name}", project_path(p))
+				%li= link_to("Code of Conduct", conduct_path)
+				%li= link_to("Contact Us", contact_path)
 
 
 	.col-md-9#main
