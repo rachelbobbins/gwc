@@ -49,7 +49,8 @@ describe "Authentication and permissions" do
 	end
 
 	context "a logged-in student" do
-		before { login_as_student }
+		let(:student) { FactoryGirl.create :user, role: 'student'}
+		before { login_as student }
 		
 		it "cannot access the teacher portal" do
 			visit "/teacher"
@@ -63,10 +64,10 @@ describe "Authentication and permissions" do
 			page.should have_content private_link.name
 		end
 
-		it "cannot view private classes - redirected to homepage" do
+		it "cannot view private classes - redirected to own account" do
 			visit "/meetings/#{private_meeting.id}"
 
-			page.should have_content "This is the homepage"
+			page.should have_content "#{student.name}'s Account"
 		end
 
 		it "sees a sign out link" do
