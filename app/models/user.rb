@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 	validates :role, :inclusion => {:in => ['teacher', 'student']}
-	validates_presence_of :first_name, :last_name
 
+	validates_presence_of :first_name, :last_name
 	has_and_belongs_to_many :completed_projects
 
 	def admin?

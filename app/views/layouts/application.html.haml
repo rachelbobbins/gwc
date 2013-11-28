@@ -30,6 +30,8 @@
 		.row
 		- if flash[:notice]
 			.alert.alert-info= flash[:notice]
+		- if flash[:error]
+			.alert.alert-danger= flash[:error]
 		= yield
 
 :erb

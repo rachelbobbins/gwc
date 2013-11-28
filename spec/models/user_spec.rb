@@ -7,8 +7,6 @@ describe User do
 		it { should ensure_inclusion_of(:role).in_array(['teacher', 'student']) }
 		it { should validate_presence_of(:first_name) }
 		it { should validate_presence_of(:last_name) }
-
-		it "validates that a user only has 1 completed project per project"
 	end
 
 	describe "#completed_projects" do

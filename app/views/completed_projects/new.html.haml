@@ -1,0 +1,4 @@
+= simple_form_for @completed_project do |f|
+	= f.input :project_id, collection: Project.all, label: "Which project?"
+	= f.input :url, label: "Link", hint: "Starting with http://"
+	= f.submit "Submit Project"

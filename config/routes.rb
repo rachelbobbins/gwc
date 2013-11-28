@@ -8,6 +8,7 @@ Gwc::Application.routes.draw do
   resources :meetings
   resources :projects, only: [:show]
   resources :users, only: [:show, :edit, :update]
+  resources :completed_projects, only: [:new, :create]
 
 	get 'user_root' => 'users#show'
 

@@ -9,6 +9,8 @@
 		- if current_user
 			= link_to("My Account", user_path(current_user))
 			|
+			= link_to("Submit a Project", new_completed_project_path)
+			|
 			- if current_user.admin?
 				= link_to("Admin", "/teacher")
 				|
