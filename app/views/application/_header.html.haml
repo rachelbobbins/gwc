@@ -1,11 +1,11 @@
 .row
-	.col-md-7
+	.col-sm-7
 		%h1
 			%img{src: "http://www.girlswhocode.com/images/logo.png"}
 			at
 			%img{src: "http://ih.constantcontact.com/fs042/1101586170917/img/243.jpg?a=1109178685625", style: "height: 10%; width: 10%;"}
 
-	.col-md-5#auth-container
+	.col-sm-5#auth-container
 		- if current_user
 			= link_to("My Account", user_path(current_user))
 			|
