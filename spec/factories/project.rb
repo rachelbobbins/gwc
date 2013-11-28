@@ -11,6 +11,6 @@ FactoryGirl.define do
 
 	factory :completed_project do
 		project { FactoryGirl.create :project }
-		url "www.finished-project.com"
+		url "https://www.khanacademy.org/cs/fake-completed-project"
 	end
 end

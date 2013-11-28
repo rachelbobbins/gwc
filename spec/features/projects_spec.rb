@@ -44,7 +44,7 @@ describe "Projects" do
 			end
 
 			it "can submit a project without any teammates" do
-				fill_in "Link", with: "http://www.khanacademy.com/cs/fake-project"
+				fill_in "Link", with: "https://www.khanacademy.org/cs/fake-project"
 				select project.name, from: "Which project?"
 
 				click_button "Submit Project"
