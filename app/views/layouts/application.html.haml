@@ -14,12 +14,19 @@
 	=render partial: "header"
 .container
 	.navbar.navbar-default#nav-menu
+		.navbar-header
+			%button{type: 'button', class: 'navbar-toggle', "data-target" => ".navbar-collapse"}
+				%span.icon-bar
+				%span.icon-bar
+				%span.icon-bar
+			%a{class: 'navbar-brand'}
 		.navbar-collapse.collapse
 			%ul.nav.navbar-nav
 				%li= link_to("Home", root_path)
 				%li.dropdown
-					%a{href: meetings_path, class: "dropdown-toggle", "data-toggle" => "dropdown"} Schedule
+					%a{href: '#', class: "dropdown-toggle", "data-toggle" => "dropdown"} Schedule
 					%ul.dropdown-menu
+						%li=link_to("Complete Schedule", meetings_path)
 						- Meeting.up_to_now.each do |m|
 							%li= link_to("Class ##{m.ordinal}", meeting_path(m))
 				%li.dropdown
@@ -29,15 +36,15 @@
 							%li= link_to("#{p.name}", project_path(p))
 				%li= link_to("Code of Conduct", conduct_path)
 				%li= link_to("Contact Us", contact_path)
-
-
-	.col-md-9#main
-		.row
-		- if flash[:notice]
-			.alert.alert-info= flash[:notice]
-		- if flash[:error]
-			.alert.alert-danger= flash[:error]
-		= yield
+.container
+	.row
+		.col-md-9#main
+			.row
+			- if flash[:notice]
+				.alert.alert-info= flash[:notice]
+			- if flash[:error]
+				.alert.alert-danger= flash[:error]
+			= yield
 
 :erb
 	</body>

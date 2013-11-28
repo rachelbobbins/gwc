@@ -10,6 +10,7 @@ describe "finding out information about classes" do
 		visit "/"
 		within "#nav-menu" do
 			click_link "Schedule"
+			click_link "Complete Schedule"
 		end
 	end
 
