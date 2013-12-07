@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
 	validates_presence_of :first_name, :last_name
 	has_and_belongs_to_many :completed_projects
 
+	def self.students
+		User.where(role: 'student')
+	end
+
 	def admin?
 		role == 'teacher'
 	end

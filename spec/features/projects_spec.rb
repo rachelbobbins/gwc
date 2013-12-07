@@ -4,7 +4,7 @@ describe "Projects" do
 	let!(:project) { FactoryGirl.create :project }
 	let(:completed_project) { FactoryGirl.create :completed_project, project: project}
 	let(:user1) { FactoryGirl.create :user }
-	let(:user2) { FactoryGirl.create :user }
+	let!(:user2) { FactoryGirl.create :user }
 
 	it "let's the user navigate to the page for a project" do
 		visit "/"
@@ -39,18 +39,39 @@ describe "Projects" do
 		end
 
 		context "an authenticated student" do
+			let(:fake_url) { "https://www.khanacademy.org/cs/fake-project" }
+			
 			before do
 				login_as user1
 				click_link "Submit a Project"
 			end
 
 			it "can submit a project without any teammates" do
-				fill_in "Link", with: "https://www.khanacademy.org/cs/fake-project"
+				fill_in "Link", with: fake_url
 				select project.name, from: "Which project?"
 
 				click_button "Submit Project"
 				page.should have_content "Congratulations on finshing a project!"
 				user1.completed_projects.count.should == 1
+			end
+
+			it "can submit a project with teammates" do
+				fill_in "Link", with: fake_url
+				select project.name, from: "Which project?"
+				select user2.name, from: "Teammate 1"
+
+				click_button "Submit Project"
+				page.should have_content "Congratulations on finshing a project!"
+				user1.completed_projects.count.should == 1
+				user2.completed_projects.count.should == 1
+			end
+
+			it "cannot submit a project that's not Khan Academy" do
+				fill_in "Link", with: "http://foo.com"
+				select project.name, from: "Which project?"
+				click_button "Submit Project"
+
+				page.should have_content "must start with https://www.khanacademy.org/cs"
 			end
 
 		end

@@ -1,5 +1,7 @@
 class CompletedProject < ActiveRecord::Base
 	belongs_to :project
+
+	attr_accessor :user1, :user2
 	
 	has_and_belongs_to_many :users
 
@@ -9,7 +11,7 @@ class CompletedProject < ActiveRecord::Base
 
 	def url_is_okay
 		unless url.match("https://www.khanacademy.org/cs")
-			errors.add(:url, "is not a valid Khan Academy CS project")
+			errors.add(:url, "must start with https://www.khanacademy.org/cs")
 		end
 	end
 end

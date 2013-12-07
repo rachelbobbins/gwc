@@ -10,10 +10,16 @@ class CompletedProjectsController < ApplicationController
 
 	def create
 		params.permit!
-		@completed_project = CompletedProject.new(params[:completed_project], users: [current_user])
+		users = [current_user, 
+							User.find_by_id(params[:completed_project][:user1]), 
+							User.find_by_id(params[:completed_project][:user2])]
+							.compact
+							.uniq
+
+		@completed_project = CompletedProject.new(params[:completed_project])
 		
 		if @completed_project.save
-			@completed_project.update_attributes(users: [current_user])
+			@completed_project.update_attributes!(users: users)
 			flash[:notice] = "Congratulations on finshing a project!"
 			redirect_to user_path(current_user)
 		else
