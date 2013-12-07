@@ -32,6 +32,7 @@ describe "Projects" do
 
 		it "is not available for teachers" do
 			login_as_admin
+			visit "/"
 			click_link "Submit a Project"
 
 			page.should have_content "Teachers are not eligible to submit project"
