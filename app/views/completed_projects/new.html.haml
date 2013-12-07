@@ -1,7 +1,8 @@
-= simple_form_for @completed_project do |f|
-	.form-group
+.col-md-6.col-md-offset-3
+	= simple_form_for @completed_project do |f|
 		= f.input :project_id, collection: Project.all, label: "Which project?"
 		= f.input :url, label: "Link"
 		= f.input :user1, collection: User.students, label: "Teammate 1"
 		= f.input :user2, collection: User.students, label: "Teammate 2"
-		= f.submit "Submit Project"
+		%br
+		= f.submit "Submit Project", class: "btn btn-primary"
