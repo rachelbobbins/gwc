@@ -49,12 +49,12 @@ describe "Authentication and permissions" do
 	end
 
 	context "a logged-in student" do
-		let(:student) { FactoryGirl.create :user, role: 'student'}
+		let!(:student) { FactoryGirl.create :user, role: 'student'}
 		before { login_as student }
 		
 		it "cannot access the teacher portal" do
 			visit "/teacher"
-			page.should have_content "This is the homepage"
+			page.should have_content "You are not an admin"
 		end
 
 		it "can view private links" do
