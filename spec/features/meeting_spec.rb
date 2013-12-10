@@ -40,7 +40,7 @@ describe "finding out information about classes" do
 
 	describe "details page for a meeting with an associated project" do
 		let(:meeting) { FactoryGirl.create :meeting, :with_project }
-		let(:project) { meeting.project }
+		let(:project) { meeting.projects.first }
 		
 		before do
 			visit "/meetings/#{meeting.id}"
@@ -53,8 +53,7 @@ describe "finding out information about classes" do
 		it "shows the project, and the project's description/links" do
 			page.should have_content project.name
 			page.should have_content project.description
-			# page.should have_
-			
+
 			project.links.each { |link| page.should have_content link.name }
 		end
 		

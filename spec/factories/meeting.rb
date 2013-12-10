@@ -6,7 +6,7 @@ FactoryGirl.define do
 		is_private 	false
 
 		trait :with_project do
-			project { FactoryGirl.create :project }
+			projects { [FactoryGirl.create(:project)] }
 		end
 	end
 end

@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "Authentication and permissions" do
 	let(:meeting) { FactoryGirl.create :meeting, :with_project }
 	let(:private_meeting) { FactoryGirl.create :meeting, is_private: true}
-	let(:project) { meeting.project }
+	let(:project) { meeting.projects.first }
 	let!(:public_link) { project.links.first }
 	let(:private_link) { FactoryGirl.create :link, is_private: true, name: "the private link" }
 	

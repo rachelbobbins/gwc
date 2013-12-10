@@ -6,7 +6,7 @@ describe "static pages" do
 	let!(:current_class) { FactoryGirl.create :meeting, starts_at: DateTime.now }
 
 	before :each do
-		current_class.update_attributes(project: future_class.project)
+		current_class.update_attributes(projects: [future_class.projects.first])
 		login_as_student
 		visit "/"
 	end

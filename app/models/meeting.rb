@@ -1,5 +1,5 @@
 class Meeting < ActiveRecord::Base
-	belongs_to :project
+	has_and_belongs_to_many :projects
 
 	validates_presence_of :starts_at, :ends_at, :description
 	
@@ -22,7 +22,8 @@ class Meeting < ActiveRecord::Base
 
 	rails_admin do
 		list do
-			field :project
+			field :ordinal
+			field :projects
 			field :starts_at
 		end
 
