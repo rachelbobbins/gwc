@@ -30,7 +30,7 @@
 						- Meeting.up_to_now.each do |m|
 							%li= link_to("Class ##{m.ordinal}", meeting_path(m))
 				%li.dropdown
-					%a{href: "#", class: "dropdown-toggle", "data-toggle" => "dropdown"} Projects
+					%a{href: "#", class: "dropdown-toggle", "data-toggle" => "dropdown"} Project Gallery
 					%ul.dropdown-menu
 						- Project.all.each do |p|
 							%li= link_to("#{p.name}", project_path(p))
