@@ -3,7 +3,7 @@ class AttendancesController < ApplicationController
 
 	def index
 		@users = User.students 
-		@meetings = Meeting.all
+		@meetings = Meeting.by_date
 		@attendance_records = AttendanceRecord.all
 	end
 	
