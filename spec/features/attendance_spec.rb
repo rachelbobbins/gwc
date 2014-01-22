@@ -33,7 +33,7 @@ describe "Attendance Interface" do
 				AttendanceRecord.create(user: user2, meeting: meeting1)
 				AttendanceRecord.create(user: user1, meeting: meeting2)
 
-				visit "/attendance"
+				page.click_link("Attendance")
 			end
 
 			it "has a header row with a list of dates" do
