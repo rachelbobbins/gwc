@@ -1,15 +1,16 @@
-%table.table
-	%thead
-		%td Student
-		- @meetings.each do |meeting|
-			%td= link_to(meeting.starts_at.strftime("%b %d, %Y"), edit_meeting_attendance_path(meeting))
-	- @users.each do |user|
-		%tr
-			%td
-				= user.name
-			- @meetings.each do |m|
-				%td= user.present_at_meeting(m) ? 'Present' : '---'
-	%tfoot
-		%td Total Students Present:
-		- @meetings.each do |meeting|
-			%td= @attendance_records.where(meeting: meeting).count
+.table-responsive
+	%table.table
+		%thead
+			%th Student
+			- @meetings.each do |meeting|
+				%th= link_to(meeting.starts_at.strftime("%b %d, %Y"), edit_meeting_attendance_path(meeting))
+		- @users.each do |user|
+			%tr
+				%td
+					= user.name
+				- @meetings.each do |m|
+					%td= user.present_at_meeting(m) ? 'Present' : '---'
+		%tfoot
+			%td Total Students Present:
+			- @meetings.each do |meeting|
+				%td= @attendance_records.where(meeting: meeting).count

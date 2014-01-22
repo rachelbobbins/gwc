@@ -37,14 +37,12 @@
 				%li= link_to("Code of Conduct", conduct_path)
 				%li= link_to("Contact Us", contact_path)
 .container
-	.row
-		.col-md-9#main
-			.row
-			- if flash[:notice]
-				.alert.alert-info= flash[:notice]
-			- if flash[:error]
-				.alert.alert-danger= flash[:error]
-			= yield
+	.row#main
+		- if flash[:notice]
+			.alert.alert-info= flash[:notice]
+		- if flash[:error]
+			.alert.alert-danger= flash[:error]
+		= yield
 
 :erb
 	</body>
