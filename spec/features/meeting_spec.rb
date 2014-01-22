@@ -3,9 +3,10 @@ require 'spec_helper'
 describe "finding out information about classes" do
 	let!(:meeting1) { FactoryGirl.create :meeting, starts_at: DateTime.new(2013, 11, 16, 9) }
 	let!(:meeting2) { FactoryGirl.create :meeting, starts_at: DateTime.new(2013, 11, 23, 9), is_private: true}
+	let!(:admin) { FactoryGirl.create :user, role: 'teacher'}
 
 	before do
-		login_as_admin
+		login_as(admin)
 
 		visit "/"
 		within "#nav-menu" do

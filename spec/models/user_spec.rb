@@ -23,6 +23,17 @@ describe User do
 		end
 	end
 
+	describe ".all" do
+		let!(:other) { FactoryGirl.create :user, last_name: "Allen"}
+		let!(:alphabetical_users) { [other, user] }
+		subject { User.all.to_a }
+		
+		it "uses last name for defaults sort order" do
+			expect(subject).to eq(alphabetical_users)
+		end
+
+	end
+
 	describe "#initials" do
 		subject { user.initials }
 		it { should == "JS" }
@@ -31,5 +42,20 @@ describe User do
 	describe "#name" do
 		subject { user.name }
 		it { should == "Jane Smith"}
+	end
+
+	describe "#present_at_meeting" do
+		let(:meeting) { FactoryGirl.create :meeting }
+		let!(:record) { AttendanceRecord.create!(meeting: meeting, user: user) }
+
+		it "returns true if the user was there" do
+			expect(user.present_at_meeting(meeting)).to eq(true)
+		end
+
+		it "returns false if the user wasn't there" do
+			absent_user = FactoryGirl.create :user
+
+			expect(absent_user.present_at_meeting(meeting)).to eq(false)
+		end
 	end
 end

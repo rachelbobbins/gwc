@@ -3,8 +3,9 @@ require 'spec_helper'
 describe "Projects" do 
 	let!(:project) { FactoryGirl.create :project }
 	let(:completed_project) { FactoryGirl.create :completed_project, project: project}
-	let(:user1) { FactoryGirl.create :user }
-	let!(:user2) { FactoryGirl.create :user }
+	let(:user1) { FactoryGirl.create :user,  last_name: 'Aaron' }
+	let!(:user2) { FactoryGirl.create :user, last_name: 'Baron' }
+	let!(:admin) { FactoryGirl.create :user, role: 'teacher' }
 
 	it "let's the user navigate to the page for a project" do
 		visit "/"
@@ -31,7 +32,7 @@ describe "Projects" do
 		end
 
 		it "is not available for teachers" do
-			login_as_admin
+			login_as(admin)
 			visit "/"
 			click_link "Submit a Project"
 

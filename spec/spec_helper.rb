@@ -20,8 +20,8 @@ RSpec.configure do |config|
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
-    User.create!(email: 'rachelheidi@gmail.com', password: 'password1', role: 'teacher')
-    User.create!(email: 'student@example.com', password: 'password1')
+    # User.create!(email: 'rachelheidi@gmail.com', password: 'password1', role: 'teacher')
+    # User.create!(email: 'student@example.com', password: 'password1')
   end
 
   config.before(:each) do

@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 	validates_presence_of :first_name, :last_name
 	has_and_belongs_to_many :completed_projects
 
+	default_scope { order('last_name ASC') }
+	
 	def self.students
 		User.where(role: 'student')
 	end
@@ -27,6 +29,13 @@ class User < ActiveRecord::Base
 
 	def initials
 		first_name[0] + last_name[0]
+	end
+
+	def present_at_meeting(meeting, attendance_records = nil)
+		attendance_records ||= AttendanceRecord.all
+
+		attendance_records.where(user: self, meeting: meeting).count == 1
+
 	end
 
 	rails_admin do

@@ -1,0 +1,13 @@
+%h3
+	Attendance for 
+	= @meeting.starts_at.strftime("%b %d, %Y")
+	|
+	= link_to("Edit", edit_meeting_attendance_path(@meeting))
+%table.table.table-striped
+	%thead
+		%td Name
+		%td Present
+	- @users.each do |user|
+		%tr
+			%td= user.name
+			%td= attendance_text(user: user, attendance_records: @attendance_records)	

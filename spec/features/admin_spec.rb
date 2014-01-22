@@ -1,13 +1,7 @@
 require 'spec_helper'
 
-def login_as_admin
-	visit "/teacher"
-	fill_in "Email", with: "rachelheidi@gmail.com"
-	fill_in "Password", with: "password1"
-	click_button "Sign in"
-end
-
 describe "Admin(teacher) interface" do
+	let!(:admin) { FactoryGirl.create(:user, role: 'teacher', password: 'password') }
 	describe "an unauthenticated user" do
 		before { visit "/teacher" }
 		
@@ -17,7 +11,7 @@ describe "Admin(teacher) interface" do
 	end
 
 	describe "an authenticated user" do
-		before { login_as_admin }
+		before { login_as(admin) }
 
 		it "can create projects" do
 			visit "/teacher/project"

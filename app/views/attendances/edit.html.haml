@@ -1,0 +1,13 @@
+%h1
+	Attendance for
+	= @meeting.starts_at.strftime("%b %d, %Y")
+= form_for @meeting, method: :put, url: meeting_attendance_path do |f|
+	%table.table
+		%thead
+			%td Student
+			%td Present?
+		- @users.each do |user|
+			%tr
+				%td= user.name
+				%td= check_box_tag "user[#{user.id}]", 'present', AttendanceRecord.where(user: user, meeting: @meeting).count > 0
+	= f.submit "Save Attendance"

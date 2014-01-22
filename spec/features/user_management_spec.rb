@@ -79,7 +79,10 @@ describe "Authentication and permissions" do
 		
 
 	context "a logged-in teacher" do
-		before { login_as_admin }
+		let!(:admin) { FactoryGirl.create(:user, role: 'teacher') }
+
+		before { login_as(admin) }
+		
 		it "can access the teacher portal" do
 			visit "/teacher"
 			page.should have_content "Site administration"

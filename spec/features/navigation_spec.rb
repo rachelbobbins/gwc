@@ -4,10 +4,11 @@ describe "static pages" do
 	let!(:past_class) { FactoryGirl.create :meeting, :with_project, starts_at: DateTime.new(2001, 1, 1)}
 	let!(:future_class) { FactoryGirl.create :meeting, :with_project, starts_at: DateTime.new(3001, 1, 1)}
 	let!(:current_class) { FactoryGirl.create :meeting, starts_at: DateTime.now }
-
+	let!(:student) { FactoryGirl.create :user }
+	
 	before :each do
 		current_class.update_attributes(projects: [future_class.projects.first])
-		login_as_student
+		login_as(student)
 		visit "/"
 	end
 
