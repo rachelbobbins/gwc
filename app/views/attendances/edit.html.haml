@@ -9,5 +9,5 @@
 		- @users.each do |user|
 			%tr
 				%td= user.name
-				%td= check_box_tag "user[#{user.id}]", 'present', AttendanceRecord.where(user: user, meeting: @meeting).count > 0
+				%td= check_box_tag "user[#{user.id}]", 'present', user.present_at_meeting(@meeting, @attendance_records)
 	= f.submit "Save Attendance"
