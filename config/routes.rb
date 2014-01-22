@@ -6,7 +6,7 @@ Gwc::Application.routes.draw do
   root 'static_page#home'
 
   resources :meetings do
-    resource :attendance, only: [:show, :edit, :update]
+    resource :attendance, only: [:edit, :update]
   end
   resources :projects, only: [:show]
   resources :users, only: [:show, :edit, :update]

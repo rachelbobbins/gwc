@@ -6,12 +6,6 @@ class AttendancesController < ApplicationController
 		@meetings = Meeting.by_date
 		@attendance_records = AttendanceRecord.all
 	end
-	
-	def show
-		@users = User.students
-		@meeting = Meeting.find(params[:meeting_id])
-		@attendance_records = AttendanceRecord.where(meeting: @meeting)
-	end
 
 	def edit
 		@users = User.students 
@@ -26,7 +20,7 @@ class AttendancesController < ApplicationController
 			AttendanceRecord.create(user_id: user_id, meeting: meeting)
 		end
 		
-		redirect_to meeting_attendance_path(params[:meeting_id])
+		redirect_to attendance_path(params[:meeting_id])
 	end
 
 	private

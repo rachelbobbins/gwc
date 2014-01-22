@@ -1,4 +1,4 @@
-%h1
+%h3
 	Attendance for
 	= @meeting.starts_at.strftime("%b %d, %Y")
 = form_for @meeting, method: :put, url: meeting_attendance_path do |f|
