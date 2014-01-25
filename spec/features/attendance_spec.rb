@@ -38,6 +38,12 @@ describe "Attendance Interface" do
 			page.click_link("Attendance")
 		end
 
+		it "summarizes attendance" do
+			page.should have_content("Attendance Summary:")
+			page.should have_content("3 total students")
+			page.should have_content("2 students have attended since the first meeting")
+			page.should have_content("0 student(s) joined after the first meeting")
+		end
 
 		it "has a header row with a chronological list of dates" do
 			headings = page.all('thead th').map(&:text)
@@ -76,7 +82,7 @@ describe "Attendance Interface" do
 		it 'allows the teacher to ignore students who only showed up to the first meeting' do
 			click_link("Exclude Dropouts")
 			rows = page.all("table tr")
-			
+
 			expect(rows.count).to eq(2)
 			expect(page.body).not_to include(dropout_user.name)
 		end

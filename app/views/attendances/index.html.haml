@@ -1,7 +1,16 @@
+%h3 Attendance Summary:
+%ul
+	%li= "#{@n_students} total students"
+	%li= "#{@n_students - @n_dropouts} students have attended since the first meeting"
+	%li= "#{@n_latecomers} students(s) joined after the 1st meeting"
+	%li= "#{@n_occasional} students who've attended > 50% of meetings"
+	%li= "#{@n_active} students who've attended > 80% of meetings"
+
 - if @include_dropouts
 	= link_to("Exclude Dropouts", attendance_path(include_dropouts: false))
 - else
 	= link_to("Include Droupouts", attendance_path(include_dropouts: true))
+
 .table-responsive
 	%table.table.table-striped	
 		%thead

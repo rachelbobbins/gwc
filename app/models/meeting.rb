@@ -1,6 +1,8 @@
 class Meeting < ActiveRecord::Base
 	has_and_belongs_to_many :projects
 
+	has_many :attendance_records
+
 	validates_presence_of :starts_at, :ends_at, :description
 	
 	markdownize! :description

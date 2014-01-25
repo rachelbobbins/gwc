@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
 
 	validates_presence_of :first_name, :last_name
 	has_and_belongs_to_many :completed_projects
+	has_many :attendance_records
+	has_many :meetings_attended, through: :attendance_records, source: 'meeting'
 
 	default_scope { order('last_name ASC') }
 	
@@ -31,11 +33,15 @@ class User < ActiveRecord::Base
 		first_name[0] + last_name[0]
 	end
 
-	def present_at_meeting(meeting, attendance_records = nil)
-		attendance_records ||= AttendanceRecord.all
+	def present_at_meeting(meeting)
+		attendance_records.where(meeting: meeting).count == 1
+	end
 
-		attendance_records.where(user: self, meeting: meeting).count == 1
+	def present_at_percent_of_meetings(p)
+		n_meetings = Meeting.up_to_now.count
+		min_number = p * n_meetings
 
+		meetings_attended.count >= min_number
 	end
 
 	rails_admin do

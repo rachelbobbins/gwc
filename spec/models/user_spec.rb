@@ -58,4 +58,21 @@ describe User do
 			expect(absent_user.present_at_meeting(meeting)).to eq(false)
 		end
 	end
+
+	describe "#present_at_percent_of_meetings" do
+		before do
+			@meeting1 = FactoryGirl.create :meeting
+			3.times { FactoryGirl.create :meeting }
+
+			user.meetings_attended << @meeting1
+		end
+
+		it "returns true if the user has been to at least that many meetings" do
+			expect(user.present_at_percent_of_meetings(0.25)).to eq(true)
+		end
+
+		it "returns false if the user has not been to at least that many meetings" do
+			expect(user.present_at_percent_of_meetings(0.26)).to eq(false)
+		end
+	end
 end
