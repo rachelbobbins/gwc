@@ -2,9 +2,19 @@ class AttendancesController < ApplicationController
 	before_filter :admin_user
 
 	def index
-		@users = User.students 
+		@include_dropouts = params[:include_dropouts] == 'false' ? false : true
 		@meetings = Meeting.by_date
 		@attendance_records = AttendanceRecord.all
+		
+		if @include_dropouts
+			@users = User.students 
+		else
+			first_meeting_attendees = @attendance_records.where(meeting: @meetings.first).map(&:user)
+			other_meeting_attendees = @attendance_records.where(meeting_id: @meetings[1..-1].map(&:id)).map(&:user)
+
+			dropouts = first_meeting_attendees - other_meeting_attendees
+			@users = User.students - dropouts
+		end
 	end
 
 	def edit

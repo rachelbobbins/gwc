@@ -4,24 +4,11 @@ describe "Authentication and permissions" do
 	let(:meeting) { FactoryGirl.create :meeting, :with_project }
 	let(:private_meeting) { FactoryGirl.create :meeting, is_private: true}
 	let(:project) { meeting.projects.first }
-	let!(:public_link) { project.links.first }
-	let(:private_link) { FactoryGirl.create :link, is_private: true, name: "the private link" }
-	
-	before do
-		private_link.update_attributes(owner: project)
-	end
 
 	context "an unauthenticated user" do
 		it "cannot access the teacher portal - prompted to log in" do
 			visit "/teacher"
 			page.should have_content "Sign in"
-		end
-		
-		it "cannot view private links" do
-			visit "/meetings/#{meeting.id}"
-
-			page.should have_content public_link.name
-			page.find_link(private_link.name)[:href].should == "#"
 		end
 		
 		it "cannot view private classes" do
@@ -57,13 +44,6 @@ describe "Authentication and permissions" do
 			page.should have_content "You are not an admin"
 		end
 
-		it "can view private links" do
-			visit "/meetings/#{meeting.id}"
-
-			page.should have_content public_link.name
-			page.should have_content private_link.name
-		end
-
 		it "cannot view private classes - redirected to own account" do
 			visit "/meetings/#{private_meeting.id}"
 
@@ -87,12 +67,7 @@ describe "Authentication and permissions" do
 			visit "/teacher"
 			page.should have_content "Site administration"
 		end
-		
-		it "can view private links" do
-			visit meeting_path(meeting)
-			page.find_link(private_link.name)[:href].should == private_link.url
-		end
-		
+
 		it "can view private classes" do
 			visit meeting_path(private_meeting)
 			page.should have_content(private_meeting.description)

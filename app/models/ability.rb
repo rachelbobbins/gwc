@@ -8,12 +8,10 @@ class Ability
         if user.admin?
           can :manage, :all
         elsif user.student?
-          can :read, Link
           can :read, Meeting, is_private: false 
         end
       else
         can :read, Meeting, is_private: false
-        can :read, Link, is_private: false
       end
     #
     # The first argument to `can` is the action you are giving the user 

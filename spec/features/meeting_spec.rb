@@ -47,15 +47,10 @@ describe "finding out information about classes" do
 			visit "/meetings/#{meeting.id}"
 		end
 
-		it "always includes the assignment link" do
+		it "always includes the project's name, description and details link" do
 			page.should have_content "| Details"
-		end
-
-		it "shows the project, and the project's description/links" do
 			page.should have_content project.name
 			page.should have_content project.description
-
-			project.links.each { |link| page.should have_content link.name }
 		end
 		
 		it "shows the meeting's description" do

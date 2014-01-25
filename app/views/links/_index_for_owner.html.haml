@@ -1,8 +1,0 @@
-%ul
-	- owner.links.by_priority.each do |l|
-		%li
-			- if can? :read, l
-				= link_to(l.name, l.url, path_only: false)
-			- else
-				= disabled_link(l.name)
-			= " #{l.long_description}"
