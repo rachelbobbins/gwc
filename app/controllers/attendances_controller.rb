@@ -3,24 +3,22 @@ class AttendancesController < ApplicationController
 
 	def index
 		@include_dropouts = params[:include_dropouts] == 'false' ? false : true
+		
 		@meetings = Meeting.by_date
 		@attendance_records = AttendanceRecord.all
 
 		all_students = User.students.select { |s| s.meetings_attended.count > 0 }
-		first_meeting_attendees = @attendance_records.where(meeting: @meetings.first).map(&:user)
-		other_meeting_attendees = @attendance_records.where(meeting_id: @meetings[1..-1].map(&:id)).map(&:user)
-		dropouts = first_meeting_attendees - other_meeting_attendees
-
 		@n_students = all_students.count
-		@n_dropouts = dropouts.count
-		@n_latecomers = all_students.count { |s| s.present_at_meeting(@meetings.first) == false }
-		@n_occasional = all_students.count { |s| s.present_at_percent_of_meetings(0.50)}
-		@n_active = all_students.count { |s| s.present_at_percent_of_meetings(0.80)}
+		@n_latecomers = all_students.count { |s| !s.present_at_meeting(@meetings.first) }
+		@n_occasional = all_students.count { |s| s.present_at_percent_of_meetings(0.50) }
+		@n_frequent = all_students.count { |s| s.present_at_percent_of_meetings(0.80) }
+		@n_dropouts = all_students.count { |s| s.dropped_out}
+		@n_inactive = all_students.count { |s| s.meetings_attended.count == 1 && !s.dropped_out }
 		
 		if @include_dropouts
 			@users = all_students
 		else
-			@users = User.students - dropouts
+			@users = all_students.select { |s| !s.dropped_out }
 		end
 	end
 

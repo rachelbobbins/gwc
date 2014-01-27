@@ -75,4 +75,32 @@ describe User do
 			expect(user.present_at_percent_of_meetings(0.26)).to eq(false)
 		end
 	end
+
+	describe "#active" do
+		subject { user.active }
+		
+		describe "a user who explicitly dropped out" do
+			let(:user) { FactoryGirl.create :user, dropped_out: true }
+			it { should == false }
+		end
+		
+		describe "a user who has only attended once" do
+			let!(:meeting1) { FactoryGirl.create :meeting }
+			before { user.meetings_attended << meeting1 }	
+
+			context "and there's only been 1 meeting" do
+				it { should == true }
+			end
+			
+			context "and there's been more than 1 meeting" do
+				before { FactoryGirl.create(:meeting) }
+				it { should == false }
+			end
+		end
+
+		describe "a user who has attended > 1 class" do
+				before { user.meetings_attended << FactoryGirl.create(:meeting) }
+				it { should == true }
+		end
+	end
 end

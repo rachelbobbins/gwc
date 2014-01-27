@@ -2,12 +2,13 @@ class Meeting < ActiveRecord::Base
 	has_and_belongs_to_many :projects
 
 	has_many :attendance_records
+	has_many :students_present, through: :attendance_records, source: 'user'
 
 	validates_presence_of :starts_at, :ends_at, :description
 	
 	markdownize! :description
 
-	scope :by_date, -> { order(:starts_at)}
+	scope :by_date, -> { order(:starts_at) }
 
 
 	def self.latest

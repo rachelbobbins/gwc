@@ -44,6 +44,11 @@ class User < ActiveRecord::Base
 		meetings_attended.count >= min_number
 	end
 
+	def active
+		return false if dropped_out
+		return meetings_attended.count > 1 || Meeting.up_to_now.count <= 1
+	end
+
 	rails_admin do
 		object_label_method do
 			:name

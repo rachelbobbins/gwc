@@ -22,8 +22,8 @@ describe "Attendance Interface" do
 	end
 
 	describe "interface for teachers" do
-		let(:dropout_user) { FactoryGirl.create :user, last_name: 'Middle' }
-		
+		let(:dropout_user) { FactoryGirl.create :user, last_name: 'Middle', dropped_out: true }
+
 		before do
 			admin = FactoryGirl.create :user, role: 'teacher'
 			AttendanceRecord.create(user: user1, meeting: meeting1)
@@ -32,7 +32,8 @@ describe "Attendance Interface" do
 			AttendanceRecord.create(user: user2, meeting: meeting1)
 			AttendanceRecord.create(user: user2, meeting: meeting2)
 			
-			AttendanceRecord.create(user: dropout_user, meeting: meeting1)
+			# AttendanceRecord.create(user: dropout_user, meeting: meeting1)
+			AttendanceRecord.create(user: dropout_user, meeting: meeting2)
 
 			login_as(admin)
 			page.click_link("Attendance")
@@ -41,8 +42,9 @@ describe "Attendance Interface" do
 		it "summarizes attendance" do
 			page.should have_content("Attendance Summary:")
 			page.should have_content("3 total students")
-			page.should have_content("2 students have attended since the first meeting")
-			page.should have_content("0 student(s) joined after the first meeting")
+			page.should have_content("3 students have attended >= 50% of meetings")
+			page.should have_content("1 student(s) joined after the 1st meeting")
+			page.should have_content("1 student(s) have explicitly dropped out")
 		end
 
 		it "has a header row with a chronological list of dates" do
@@ -55,13 +57,15 @@ describe "Attendance Interface" do
 		it "has a footer row with total # of students present" do
 			footers = page.all('tfoot td').map(&:text)
 			expect(footers[0]).to eq('Total Students Present:')
-			expect(footers[1]).to eq('3')
-			expect(footers[2]).to eq('2')
+			expect(footers[1]).to eq('2')
+			expect(footers[2]).to eq('3')
 		end
 
 		it "shows a table of attendance records per student" do
 			rows = page.all("table tr")
 			expect(rows.count).to eq(3)
+
+			#TODO: Refactor
 
 			first_row = rows[0].all('td').map(&:text)
 			expect(first_row[0]).to eq(user1.name)
@@ -70,8 +74,8 @@ describe "Attendance Interface" do
 
 			second_row = rows[1].all('td').map(&:text)
 			expect(second_row[0]).to eq(dropout_user.name)
-			expect(second_row[1]).to eq('Present')
-			expect(second_row[2]).to eq('---')
+			expect(second_row[1]).to eq('---')
+			expect(second_row[2]).to eq('Present')
 
 			third_row = rows[2].all('td').map(&:text)
 			expect(third_row[0]).to eq(user2.name)
@@ -79,7 +83,7 @@ describe "Attendance Interface" do
 			expect(third_row[2]).to eq('Present')
 		end
 
-		it 'allows the teacher to ignore students who only showed up to the first meeting' do
+		it 'allows the teacher to ignore users who have explicitly dropped out' do
 			click_link("Exclude Dropouts")
 			rows = page.all("table tr")
 
@@ -101,24 +105,17 @@ describe "Attendance Interface" do
 				expect(user2_box).to be_checked
 
 				dropout_box = page.find("input#user_#{dropout_user.id}")
-				expect(dropout_box).not_to be_checked
+				expect(dropout_box).to be_checked
 			end
 
 			it "allows teacher to edit attendance" do
 				page.uncheck("user_#{user1.id}")
-				page.check("user_#{dropout_user.id}")
 
 				click_button("Save Attendance")
+
 				rows = page.all("table tr")
-				
-				first_row = rows[0].all('td').map(&:text)
-				expect(first_row[2]).to eq('---')
-
-				second_row = rows[1].all('td').map(&:text)
-				expect(second_row[2]).to eq('Present')
-
-				third_row = rows[2].all('td').map(&:text)
-				expect(third_row[2]).to eq('Present')
+				user1_row = rows[0].all('td').map(&:text)
+				expect(user1_row[2]).to eq('---')
 			end
 		end
 	end
