@@ -1,0 +1,18 @@
+%h3 Copy and paste relevant email addresses from below
+
+#active
+	%h4 Active students (not dropped out; attended > 1 meeting)
+	%ul.email-list
+		- @active_students.each do |s|
+			%li= "#{s.name} <#{s.email}>,"
+#inactive
+	%h4 Inactive students (not dropped out; attended only 1 meeting)
+	%ul.email-list
+		- @inactive_students.each do |s|
+			%li= "#{s.name} <#{s.email}>,"
+#dropout
+	%h4 Dropout students (informed us they could not attend)
+	%ul.email-list
+		- @dropout_students.each do |s|
+			%li
+				= "#{s.name} <#{s.email}>,"
