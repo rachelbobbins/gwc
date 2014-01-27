@@ -11,4 +11,14 @@ class StaticPageController < ApplicationController
 		@meeting = Meeting.latest
 		render "static/home"
 	end
+
+	def email_list
+		students = User.students
+
+		@active_students = students.select { |s| s.active }
+		@dropout_students = students.select { |s| s.dropped_out }
+		@inactive_students = students - @active_students - @dropout_students
+
+		render "static/email_list"
+	end
 end

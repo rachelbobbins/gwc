@@ -24,30 +24,17 @@ describe "Admin(teacher) interface" do
 			page.should have_content "Project successfully created"
 		end
 
-		# it "can associate a project(s) with a meeting", :js => true do
-		# 	pending "TODO: why can't rspec find save action?"
-		# 	within ".table" do
-		# 		click_link "Meetings"
-		# 	end
+		describe "emailing students" do
+			let!(:user) { FactoryGirl.create :user, first_name: 'Jane', last_name: 'Doe', email: 'jdoe@fake.com' }
+			it "can view a list of student emails, sorted by active status" do
+				click_link "Email Students"
 
-		# 	sleep(2)
-
-		# 	page.all("tr .edit_member_link a").first.click
-
-		# 	within "#meeting_project_id_field" do
-		# 		page.find(".create").click
-		# 	end
-
-		# 	within "#modal" do
-		# 		fill_in "Assignment link", with: "www.google.com"
-		# 		fill_in "Name", with: "Google"
-		# 		page.find("a.save-action").click
-		# 	end
-
-		# 	within "#meeting_project_id" do
-		# 		page should have_content "Fake name"
-		# 	end
-		# end
+				page.should have_content "Active students (not dropped out; attended > 1 meeting)"
+				page.should have_content "Inactive students (not dropped out; attended only 1 meeting)"
+				page.should have_content "Dropout students (informed us they could not attend)" 
+				page.should have_content "Jane Doe <jdoe@fake.com>"
+			end
+		end
 
 		describe "managing meetings" do
 			it "can create meetings" do

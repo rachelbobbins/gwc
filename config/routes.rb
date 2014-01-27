@@ -13,11 +13,11 @@ Gwc::Application.routes.draw do
   resources :completed_projects, only: [:new, :create]
   # resources :attendances, only: [:index]
 
-  get 'attendance' => 'attendances#index'
-	get 'user_root' => 'users#show'
-
-  get 'contact' => 'static_page#contact'
-  get 'conduct' => 'static_page#conduct'
-  get 'home'		=> 'static_page#home'
+  get 'attendance'  => 'attendances#index'
+	get 'user_root'   => 'users#show'
+  get 'contact'     => 'static_page#contact'
+  get 'conduct'     => 'static_page#conduct'
+  get 'home'		    => 'static_page#home'
+  get 'email_list'  => 'static_page#email_list'
 
 end

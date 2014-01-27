@@ -6,3 +6,7 @@
 #main {
 	padding-left: 40px;
 }
+
+ul.email-list {
+	list-style-type: none;
+}
