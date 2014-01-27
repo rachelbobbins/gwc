@@ -2,7 +2,7 @@
 
 I teach a class for Girls Who Code, and created this website to help manage my class. It's highly tailored to my needs (features are developed on an as-needed basis). If you're teaching any sort of class/workshop, you might find this code helpful. It's heavily tested at the feature level, so it won't go bonkers on you.
 
-You can view a [live instance](http://gwc.rbobbs.com) of the site.
+You can view my class' website here:(http://gwc.rbobbs.com). My students have done some pretty awesome work. =D
 
 === Features
 
