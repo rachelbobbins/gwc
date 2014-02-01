@@ -24,6 +24,14 @@ class User < ActiveRecord::Base
 		role == 'student'
 	end
 
+	def urls_for_project(project)
+		begin
+			completed_projects.find(project.id).url
+		rescue
+			''
+		end
+	end
+
 	def name
 		first_name + " " + last_name
 	end

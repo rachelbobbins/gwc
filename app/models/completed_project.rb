@@ -6,6 +6,20 @@ class CompletedProject < ActiveRecord::Base
 	has_and_belongs_to_many :users
 
 	validate :url_is_okay
+	
+	def self.to_csv(students)
+		projects = Project.all
+		headers = ['Students'] + projects.map(&:name)
+
+		CSV.generate do |csv|
+			csv << headers
+			students.each do |s|
+				completed_projects = projects.map { |p| s.urls_for_project(p) }
+
+				csv << [s.name] + completed_projects
+			end
+		end
+	end
 
 	private
 

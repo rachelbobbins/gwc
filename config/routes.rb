@@ -10,7 +10,7 @@ Gwc::Application.routes.draw do
   end
   resources :projects, only: [:show]
   resources :users, only: [:show, :edit, :update]
-  resources :completed_projects, only: [:new, :create]
+  resources :completed_projects, only: [:new, :create, :index]
   # resources :attendances, only: [:index]
 
   get 'attendance'  => 'attendances#index'

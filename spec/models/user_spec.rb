@@ -31,7 +31,6 @@ describe User do
 		it "uses last name for defaults sort order" do
 			expect(subject).to eq(alphabetical_users)
 		end
-
 	end
 
 	describe "#initials" do
@@ -44,6 +43,14 @@ describe User do
 		it { should == "Jane Smith"}
 	end
 
+	# describe "#urls_for_project" do
+	# 	let(:user) { FactoryGirl.create :user }
+	# 	let(:completed_project) { FactoryGirl.create :comp}
+	# 	it "returns a list of URLs student has submitted for the given project" do
+
+	# 	end
+	# end
+	
 	describe "#present_at_meeting" do
 		let(:meeting) { FactoryGirl.create :meeting }
 		let!(:record) { AttendanceRecord.create!(meeting: meeting, user: user) }
