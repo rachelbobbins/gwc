@@ -91,6 +91,15 @@ describe "Attendance Interface" do
 			expect(page.body).not_to include(dropout_user.name)
 		end
 
+		it 'allows the teacher to sort by number of classes attended' do
+			click_link("Sort by # of classes")
+			rows = page.all("table tr")
+
+			names = page.all("table tr").map { |r| r.all('td').map(&:text)[0] }
+			names[0..1].should =~ [user1.name, user2.name]
+			names[2].should == dropout_user.name
+		end
+
 		describe "attendance for a specific meeting" do
 			before { page.click_link('Jan 02, 2014') }
 			

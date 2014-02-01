@@ -12,6 +12,8 @@
 	= link_to("Exclude Dropouts", attendance_path(include_dropouts: false))
 - else
 	= link_to("Include Droupouts", attendance_path(include_dropouts: true))
+|
+= link_to("Sort by # of classes", attendance_path(sort_by_attendance: true))
 
 .table-responsive
 	%table.table.table-striped	

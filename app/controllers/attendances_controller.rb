@@ -3,11 +3,15 @@ class AttendancesController < ApplicationController
 
 	def index
 		@include_dropouts = params[:include_dropouts] == 'false' ? false : true
-		
+		 
 		@meetings = Meeting.by_date
 		@attendance_records = AttendanceRecord.all
-
 		all_students = User.students.select { |s| s.meetings_attended.count > 0 }
+
+		if params[:sort_by_attendance] == 'true'
+			all_students = all_students.sort_by! { |s| -1 * s.meetings_attended.count }
+		end
+
 		@n_students = all_students.count
 		@n_latecomers = all_students.count { |s| !s.present_at_meeting(@meetings.first) }
 		@n_occasional = all_students.count { |s| s.present_at_percent_of_meetings(0.50) }
