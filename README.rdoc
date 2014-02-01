@@ -1,28 +1,12 @@
-== README
+== GWC website
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I teach a class for Girls Who Code, and created this website to help manage my class. It's highly tailored to my needs (features are developed on an as-needed basis). If you're teaching any sort of class/workshop, you might find this code helpful. It's heavily tested at the feature level, so it won't go bonkers on you.
 
-Things you may want to cover:
+You can view my class' website here:(http://gwc.rbobbs.com). My students have done some pretty awesome work. =D
 
-* Ruby version
+=== Features
 
-* System dependencies
+* Project gallery, showing students' work sorted by project
+* Ability for students to submit projects (for themselves and up to 2 teammates)
+* Admin interface for teacher. Includes ability to post information about classes and projects, take attendance, email students.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
