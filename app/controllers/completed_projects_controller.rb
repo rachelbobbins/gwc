@@ -27,4 +27,10 @@ class CompletedProjectsController < ApplicationController
 			render "new"
 		end
 	end
+
+	def index
+		students = User.students.select{ |s| s.meetings_attended.count > 0 }
+
+	  send_data CompletedProject.to_csv(students)
+	end
 end

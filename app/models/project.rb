@@ -3,6 +3,8 @@ class Project < ActiveRecord::Base
 
 	validates_presence_of :assignment_link, :name
 
+	default_scope { order('name ASC') }
+
 	markdownize! :description
 
 	rails_admin do
