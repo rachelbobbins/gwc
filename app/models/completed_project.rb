@@ -15,6 +15,7 @@ class CompletedProject < ActiveRecord::Base
 			csv << headers
 			students.each do |s|
 				completed_projects = projects.map { |p| s.urls_for_project(p).join(', ') }
+				completed_projects = projects.map { |p| s.urls_for_project(p) }
 
 				csv << [s.name] + completed_projects
 			end

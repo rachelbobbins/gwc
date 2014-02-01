@@ -25,11 +25,7 @@ class User < ActiveRecord::Base
 	end
 
 	def urls_for_project(project)
-		# begin
 			completed_projects.where(project: project).map(&:url)
-		# rescue
-		# 	''
-		# end
 	end
 
 	def name
