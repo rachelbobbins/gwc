@@ -23,6 +23,10 @@ class Meeting < ActiveRecord::Base
 		Meeting.all.sort_by(&:starts_at).index(self)
 	end
 
+	def name
+		starts_at.to_s
+	end
+
 	rails_admin do
 		list do
 			field :ordinal
