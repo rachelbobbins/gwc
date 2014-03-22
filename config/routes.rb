@@ -11,7 +11,6 @@ Gwc::Application.routes.draw do
   resources :projects, only: [:show]
   resources :users, only: [:show, :edit, :update]
   resources :completed_projects, only: [:new, :create, :index]
-  # resources :attendances, only: [:index]
 
   get 'attendance'  => 'attendances#index'
 	get 'user_root'   => 'users#show'
@@ -19,5 +18,6 @@ Gwc::Application.routes.draw do
   get 'conduct'     => 'static_page#conduct'
   get 'home'		    => 'static_page#home'
   get 'email_list'  => 'static_page#email_list'
+  get 'final_project' => 'static_page#final_project'
 
 end

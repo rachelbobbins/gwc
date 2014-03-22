@@ -21,4 +21,8 @@ class StaticPageController < ApplicationController
 
 		render "static/email_list"
 	end
+
+	def final_project
+		render "static/final_project"
+	end
 end
